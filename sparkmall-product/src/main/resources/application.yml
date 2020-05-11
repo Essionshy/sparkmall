@@ -1,0 +1,13 @@
+server:
+  port: 10000
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  rabbitmq:
+    password: guest
+    username: guest
+    host: 192.168.1.186
+    port: 5672

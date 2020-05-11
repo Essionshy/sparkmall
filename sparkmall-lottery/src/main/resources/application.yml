@@ -1,0 +1,43 @@
+server:
+  port: 12001
+
+spring:
+  application:
+    name: sparkmall-lottery
+
+  # DataSource
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/sparkmall_lottery?serverTimezone=UTC
+    username: root
+    password: root-xz
+
+  # Redis
+  redis:
+    host: 192.168.1.186
+    port: 6379
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: 192.168.1.186
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 100
+        acknowledge-mode: manual #设置为手动签收消息
+
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*Dao.xml
+
+
+
+logging:
+  level:
+    com.tingyu.sparkmall: debug

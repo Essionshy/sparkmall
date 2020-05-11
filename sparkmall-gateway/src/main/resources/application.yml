@@ -1,0 +1,50 @@
+server:
+  port: 88
+spring:
+  application:
+    name: sparkmall-gateway
+
+  #配置 nacos服务注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    #配置 gateway网关
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+      routes:
+        - id: product_route #配置商品服务路由
+          uri: lb://sparkmall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
+
+        - id: lottery_route #配置抽奖系统路由
+          uri: lb://sparkmall-lottery
+          predicates:
+            - Path=/api/lottery/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
+
+        - id: admin_route #配置后台管理路由
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /renren-fast/$\{segment}
+
+
+#      globalcors:  路径模糊的放在后面，不然会抢先路由
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - PUT
+#              - DELTE
+#              - OPTIONS

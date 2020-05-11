@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: sparkmall-product
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 775e3eaf-3d87-4a79-87e5-72d8873b5dad
