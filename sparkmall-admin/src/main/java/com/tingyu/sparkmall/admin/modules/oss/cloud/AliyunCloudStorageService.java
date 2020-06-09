@@ -6,10 +6,10 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.modules.oss.cloud;
+package com.tingyu.sparkmall.admin.modules.oss.cloud;
 
 import com.aliyun.oss.OSSClient;
-import io.renren.common.exception.RRException;
+import com.tingyu.sparkmall.admin.common.exception.RRException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
