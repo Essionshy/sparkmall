@@ -1,22 +1,21 @@
 package com.tingyu.sparkmall;
 
 import com.tingyu.sparkmall.feign.MemberFeignService;
-import com.tingyu.sparkmall.utils.R;
-import com.tingyu.sparkmall.vo.MemberVo;
+import com.tingyu.sparkmall.utils.RedisKeys;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.data.redis.core.HashOperations;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.data.redis.core.SetOperations;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
+import java.util.List;
 
-@WebAppConfiguration
-@SpringBootTest
-@ContextConfiguration
+//@WebAppConfiguration
+//@SpringBootTest
+@SpringBootTest(classes = {SparkmallLotteryApplication.class})
 class SparkmallLotteryApplicationTests {
 
     @Autowired
@@ -26,6 +25,11 @@ class SparkmallLotteryApplicationTests {
     MemberFeignService memberFeignService;
     @Autowired
     private HashOperations<String, String, Object> hashOperations;
+
+    @Autowired
+    private SetOperations<String,Object> setOperations;
+
+
 
     @Test
     void contextLoads() {
@@ -39,9 +43,19 @@ class SparkmallLotteryApplicationTests {
 
 
     @Test
-    public void testRabbitMQ() {
-        R result = memberFeignService.info(1L);
-        MemberVo member = (MemberVo) result.get("member");
+    public void testSetOperation() {
+
+
+
+        //添加
+        Long add = setOperations.add(RedisKeys.RANDOM_LOTTERY_KEY, new String[]{"1", "3", "d", "2", "z", "w", "abc"});
+
+        System.out.println("添加数据完成");
+
+        List<Object> retValue = setOperations.pop(RedisKeys.RANDOM_LOTTERY_KEY, 2L);
+
+        System.out.println(retValue.toString());
+
     }
 
 }

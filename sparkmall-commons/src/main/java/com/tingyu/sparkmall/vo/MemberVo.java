@@ -1,6 +1,5 @@
 package com.tingyu.sparkmall.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +22,7 @@ public class MemberVo {
     /**
      * 用户id
      */
-    @TableId
+
     private Long userId;
     /**
      * 用户名

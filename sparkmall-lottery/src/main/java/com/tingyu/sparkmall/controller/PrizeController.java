@@ -1,7 +1,6 @@
 package com.tingyu.sparkmall.controller;
 
-
-import com.tingyu.sparkmall.entity.PrizeEntity;
+import com.tingyu.sparkmall.entity.lottery.PrizeEntity;
 import com.tingyu.sparkmall.service.PrizeService;
 import com.tingyu.sparkmall.utils.PageUtils;
 import com.tingyu.sparkmall.utils.R;
@@ -9,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -74,4 +74,13 @@ public class PrizeController {
         return R.ok();
     }
 
+    /**
+     * 查找所有未启动的抽奖项
+     * @return
+     */
+    @RequestMapping("/find/all")
+    public R findAllUnStartedPrize(){
+        List<PrizeEntity> list = prizeService.findAllUnStartedPrize();
+        return R.ok().put("list",list);
+    }
 }

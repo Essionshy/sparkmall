@@ -8,6 +8,7 @@ class SparkmallCouponApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("this is a test ");
     }
 
 }

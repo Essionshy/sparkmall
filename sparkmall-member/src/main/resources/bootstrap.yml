@@ -1,5 +1,11 @@
 spring:
+  application:
+    name: sparkmall-member
+
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.0.105:8848
+        namespace: 94aa592a-ddd9-407d-ac09-9e0a56ab69a4
+        file-extension: properties
+

@@ -1,7 +1,7 @@
 package com.tingyu.sparkmall.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.tingyu.sparkmall.entity.PrizeEntity;
+import com.tingyu.sparkmall.entity.lottery.PrizeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

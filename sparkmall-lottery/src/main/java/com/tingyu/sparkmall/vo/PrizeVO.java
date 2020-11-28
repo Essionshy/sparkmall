@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @Author essionshy
@@ -19,7 +20,7 @@ import java.sql.Timestamp;
 @Data
 @ToString
 @Accessors(chain = true)
-public class PrizeVO {
+public class PrizeVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private Integer prizeId;
@@ -29,7 +30,7 @@ public class PrizeVO {
     private Integer amount;           //奖品数量
     private Integer status;              //状态
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Timestamp createTime;       //添加时间
+    private Date createTime;       //添加时间
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Timestamp updateTime;    //更新时间
+    private Date updateTime;    //更新时间
 }

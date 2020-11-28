@@ -2,7 +2,7 @@ package com.tingyu.sparkmall.dao;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.tingyu.sparkmall.entity.PrizeEntity;
+import com.tingyu.sparkmall.entity.lottery.PrizeEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

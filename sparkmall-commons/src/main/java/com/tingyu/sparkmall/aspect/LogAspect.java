@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.aspect;
 
-import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
 import com.tingyu.sparkmall.annotation.Operation;
 import com.tingyu.sparkmall.annotation.SysLog;
 import com.tingyu.sparkmall.utils.ServletUtils;
@@ -61,7 +61,7 @@ public class LogAspect {
         logger.debug("请求类型:{}", request.getMethod());
         logger.debug("请求方法:{}.{}", signature.getDeclaringTypeName(), signature.getName());
         logger.debug("请求IP:{}", request.getRemoteAddr());
-        logger.debug("请求入参：{}", JSON.toJSONString(joinPoint.getArgs()));
+        logger.debug("请求入参：{}", new Gson().toJson(joinPoint.getArgs()));
 
 
         //获取目标方法是否被 @SysLog注解标注，如果有则需要保存进入数据库中，如果没有仅在控制台打印和输出到日志文件

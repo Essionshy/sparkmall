@@ -124,6 +124,12 @@ public enum BizCodeEnum {
     LOTTERY_EXISTS(30003, "您已经抽中奖品，请不要重复抽取...."),
     LOTTERY_OVER(30004, "抽奖已结束，谢谢您的参与，下次再会..."),
 
+    LOTTERY_REGISTERED(30005, "您已经参加本次抽奖活动，敬请期待"),
+
+    //库存模块
+    WARE_NOT_ENOUGH(40001, "库存不足"),
+
+
     //Redis
     REDIS_NOT_ENABLE(30001, "Redis服务未开启！");
 

@@ -2,7 +2,7 @@ package com.tingyu.sparkmall.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.tingyu.sparkmall.entity.RecordEntity;
+import com.tingyu.sparkmall.entity.lottery.RecordEntity;
 import com.tingyu.sparkmall.utils.PageUtils;
 
 import java.util.Map;

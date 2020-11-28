@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.controller;
 
-import com.tingyu.sparkmall.entity.RecordEntity;
+import com.tingyu.sparkmall.entity.lottery.RecordEntity;
 import com.tingyu.sparkmall.service.RecordService;
 import com.tingyu.sparkmall.utils.PageUtils;
 import com.tingyu.sparkmall.utils.R;

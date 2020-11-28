@@ -15,7 +15,12 @@ package com.tingyu.sparkmall.utils;
  */
 public class RedisKeys {
 
-    public static String getSysConfigKey(String key) {
-        return "sys:config:" + key;
-    }
+    public static final String PRIZE_KEY_PREFIX = "lottery:prize:id:"; //是不是可以？保存在一个list集合中
+    public static final String LOTTERY_USER_KEY_PREFIX = "lottery:user:prize:id:"; //中奖记录，放在一个set集合中呢
+
+    public static final String LOTTER_LOCK_KEY="lottery:lock:key";
+
+
+    public static final String RANDOM_LOTTERY_KEY = "lottery:random:key"; //随机抽奖，活动结束后删除该key
+    public static final String REDIS_LOCK = "redis_lock"; //
 }

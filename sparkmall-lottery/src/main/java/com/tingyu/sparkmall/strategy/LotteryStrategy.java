@@ -1,6 +1,9 @@
 package com.tingyu.sparkmall.strategy;
 
-import com.tingyu.sparkmall.entity.RecordEntity;
+
+import com.tingyu.sparkmall.entity.lottery.RecordEntity;
+
+import java.util.List;
 
 /**
  * @Author essionshy
@@ -9,6 +12,15 @@ import com.tingyu.sparkmall.entity.RecordEntity;
  */
 public interface LotteryStrategy {
 
-    RecordEntity lotteryDistribution(RecordEntity record);
+
+
+
+    /**
+     *
+     * @param level  奖项等级
+     * @param count  奖品数量
+     * @return 返回中奖号码， 可以是用户手机号，也只可以是随机生成的号码，
+     */
+    List<RecordEntity> lottery(int level, long count);
 
 }

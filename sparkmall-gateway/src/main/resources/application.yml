@@ -29,13 +29,24 @@ spring:
             - Path=/api/lottery/**
           filters:
             - RewritePath=/api(?<segment>/?.*), /$\{segment}
-
+        - id: lottery_route #配置订单服务系统路由
+          uri: lb://sparkmall-order
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
+        - id: lottery_route #配置库存服务系统路由
+          uri: lb://sparkmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
         - id: admin_route #配置后台管理路由
-          uri: lb://renren-fast
+          uri: lb://sparkmall-admin
           predicates:
             - Path=/api/**
           filters:
-            - RewritePath=/api(?<segment>/?.*), /renren-fast/$\{segment}
+            - RewritePath=/api(?<segment>/?.*), /sparkmall-admin/$\{segment}
 
 
 #      globalcors:  路径模糊的放在后面，不然会抢先路由

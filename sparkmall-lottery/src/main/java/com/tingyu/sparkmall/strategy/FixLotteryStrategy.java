@@ -1,9 +1,10 @@
 package com.tingyu.sparkmall.strategy;
 
-import com.tingyu.sparkmall.entity.RecordEntity;
-import com.tingyu.sparkmall.event.RecordEvent;
+
+import com.tingyu.sparkmall.entity.lottery.RecordEntity;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.atomic.LongAdder;
 
 /**
@@ -19,6 +20,10 @@ public class FixLotteryStrategy implements LotteryStrategy {
     private static Integer[] threePrize = {15, 38};
     private static Integer[] twoPrize = {25, 50};
     private static Integer[] onePrize = {60};
+
+
+
+
 
 
     public RecordEntity lotteryDistribution(RecordEntity record) {
@@ -41,5 +46,10 @@ public class FixLotteryStrategy implements LotteryStrategy {
             addr = new LongAdder();
         }
         return record;
+    }
+
+    @Override
+    public List<RecordEntity> lottery(int level, long count) {
+        return null;
     }
 }

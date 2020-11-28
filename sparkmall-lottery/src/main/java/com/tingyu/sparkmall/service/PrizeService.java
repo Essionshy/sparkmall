@@ -2,7 +2,7 @@ package com.tingyu.sparkmall.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.tingyu.sparkmall.entity.PrizeEntity;
+import com.tingyu.sparkmall.entity.lottery.PrizeEntity;
 import com.tingyu.sparkmall.utils.PageUtils;
 
 import java.util.List;

@@ -1,11 +1,13 @@
 package com.tingyu.sparkmall.controller;
 
 
+import com.tingyu.sparkmall.dto.MemberDTO;
 import com.tingyu.sparkmall.entity.MemberEntity;
 import com.tingyu.sparkmall.service.MemberService;
 import com.tingyu.sparkmall.utils.PageUtils;
 import com.tingyu.sparkmall.utils.R;
 import com.tingyu.sparkmall.vo.MemberVo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +21,9 @@ import java.util.Map;
  * @email 1218817610@qq.com
  * @date 2020-05-11 22:03:09
  */
+@Slf4j
 @RestController
-@RequestMapping("/member")
+@RequestMapping("api/member")
 public class MemberController {
     @Autowired
     private MemberService memberService;
@@ -30,6 +33,7 @@ public class MemberController {
      */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params) {
+        log.info("请求查询会员列表");
         PageUtils page = memberService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -80,4 +84,15 @@ public class MemberController {
         return R.ok();
     }
 
+    /**远程调用*/
+    @GetMapping("/feign/info/{userId}")
+    public MemberDTO getMemberInfo(@PathVariable("userId") Long userId) {
+        MemberDTO memberVo = null;
+        MemberEntity member = memberService.getById(userId);
+        if (member != null) {
+            memberVo = new MemberDTO();
+            BeanUtils.copyProperties(member, memberVo);
+        }
+        return memberVo;
+    }
 }

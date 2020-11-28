@@ -1,6 +1,10 @@
 package com.tingyu.sparkmall.service;
 
 import com.tingyu.sparkmall.param.LotteryParam;
+import com.tingyu.sparkmall.vo.MemberVo;
+import com.tingyu.sparkmall.vo.RecordVO;
+
+import java.util.List;
 
 /**
  * @Author essionshy
@@ -22,5 +26,8 @@ public interface LotteryService {
      */
     Integer sendRecordMessage(LotteryParam param);
 
+    boolean register(MemberVo memberVo); //报名：活动已结束，如果用户已经注册，不允许重复报名
 
+
+    List<RecordVO> randomLottery(LotteryParam param);
 }
