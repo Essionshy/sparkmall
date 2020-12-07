@@ -1,7 +1,7 @@
 package com.tingyu.sparkmall.admin;
 
-import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserEntity;
 import com.tingyu.sparkmall.admin.common.utils.RedisUtils;
+import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserEntity;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;

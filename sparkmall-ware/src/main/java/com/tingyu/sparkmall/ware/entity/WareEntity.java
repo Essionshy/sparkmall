@@ -26,7 +26,13 @@ public class WareEntity {
     private String productNo; //商品编号
 
 
-    private BigDecimal count; //数量/重量
+    private BigDecimal total; //库存总量
+
+    private BigDecimal used; //库存使用量
+
+    private Integer status;
+
+    private Integer deleted;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(fill = FieldFill.INSERT)

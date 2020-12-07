@@ -1,10 +1,12 @@
 package com.tingyu.sparkmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import javax.validation.constraints.NotBlank;
-import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @Author essionshy
@@ -18,17 +20,57 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @ToString
 @Accessors(chain = true)
-public class ProductEntity implements Serializable {
+@TableName(value = "tbl_product_item")
+public class ProductEntity {
 
     /**
      * 商品ID
      */
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
+
+    /**
+     * 商品编号
+     */
+    private String productNo;
 
     /**
      * 商品名称
      */
-    @NotBlank(message = "商品名称不能为空")
     private String name;
 
+    /**
+     * 商品类别ID
+     */
+    private Long categoryId;
+
+
+    /**
+     * 商品生产厂家
+     */
+    private String manufacturer;
+
+    /**
+     * 商品生产日期
+     */
+    private Date manufactureDate;
+
+    /**
+     * 商品保质期
+     */
+    private Integer validityMonth;
+
+    /**
+     * 商品价格
+     */
+    private BigDecimal price;
+
+
+    @TableField(fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date gmtCreate;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date gmtModified;
 }

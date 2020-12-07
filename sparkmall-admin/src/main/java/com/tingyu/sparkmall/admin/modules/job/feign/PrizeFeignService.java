@@ -1,9 +1,10 @@
 package com.tingyu.sparkmall.admin.modules.job.feign;
 
-import com.tingyu.sparkmall.entity.lottery.PrizeEntity;
-import com.tingyu.sparkmall.utils.R;
+import com.tingyu.sparkmall.commons.dto.PrizeDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * @Author essionshy
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface PrizeFeignService {
 
     @RequestMapping("lottery/prize/find/all")
-    public R findAllUnStartedPrize();
+    List<PrizeDTO> findAllUnStartedPrize();
 
     @RequestMapping("lottery/prize/update")
-    public R update( PrizeEntity prize);
+    boolean update(PrizeDTO prize);
 }

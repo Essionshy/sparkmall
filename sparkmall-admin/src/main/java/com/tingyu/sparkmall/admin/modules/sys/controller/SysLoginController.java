@@ -8,12 +8,12 @@
 
 package com.tingyu.sparkmall.admin.modules.sys.controller;
 
+import com.tingyu.sparkmall.admin.common.utils.R;
 import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserEntity;
 import com.tingyu.sparkmall.admin.modules.sys.form.SysLoginForm;
 import com.tingyu.sparkmall.admin.modules.sys.service.SysCaptchaService;
 import com.tingyu.sparkmall.admin.modules.sys.service.SysUserService;
 import com.tingyu.sparkmall.admin.modules.sys.service.SysUserTokenService;
-import com.tingyu.sparkmall.admin.common.utils.R;
 import org.apache.commons.io.IOUtils;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,9 +8,9 @@
 
 package com.tingyu.sparkmall.admin.modules.sys.controller;
 
-import com.tingyu.sparkmall.admin.modules.sys.service.SysLogService;
 import com.tingyu.sparkmall.admin.common.utils.PageUtils;
 import com.tingyu.sparkmall.admin.common.utils.R;
+import com.tingyu.sparkmall.admin.modules.sys.service.SysLogService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

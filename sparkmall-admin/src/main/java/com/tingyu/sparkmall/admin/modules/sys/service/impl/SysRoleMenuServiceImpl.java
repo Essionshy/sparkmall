@@ -9,8 +9,8 @@
 package com.tingyu.sparkmall.admin.modules.sys.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.tingyu.sparkmall.admin.modules.sys.dao.SysRoleMenuDao;
 import com.tingyu.sparkmall.admin.modules.sys.entity.SysRoleMenuEntity;
+import com.tingyu.sparkmall.admin.modules.sys.dao.SysRoleMenuDao;
 import com.tingyu.sparkmall.admin.modules.sys.service.SysRoleMenuService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

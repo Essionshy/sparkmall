@@ -1,26 +1,31 @@
 package com.tingyu.sparkmall.order.feign;
 
-import com.tingyu.sparkmall.dto.WareDTO;
+import com.tingyu.sparkmall.commons.dto.ProductDTO;
+import com.tingyu.sparkmall.commons.dto.WareDTO;
+import com.tingyu.sparkmall.order.feign.fallback.WareFeignFallbackServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @Author essionshy
  * @Create 2020/11/27 22:52
  * @Version renren-fast
  */
-@FeignClient("sparkmall-ware")
+@FeignClient(name = "sparkmall-ware", fallback = WareFeignFallbackServiceImpl.class)
+//@FeignClient(name = "sparkmall-ware")
 @Component
 public interface WareFeignService {
 
-    @GetMapping("/api/ware/get/{productNo}")
+    @GetMapping("/ware/get/{productNo}")
     WareDTO get(@PathVariable("productNo") String productNo);
 
-    @PutMapping("/api/ware/decreate/{productNo}/{count}")
-    boolean decreate(@PathVariable("productNo") String productNo, @PathVariable("count") BigDecimal count);
+    @PutMapping("/ware/decreate/{productNo}/{count}")
+    boolean decrease(@PathVariable("productNo") String productNo, @PathVariable("count") BigDecimal count);
+
+    @PostMapping("/ware/decrease")
+    boolean decrease(@RequestBody List<ProductDTO> products);
 }

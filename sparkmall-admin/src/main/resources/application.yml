@@ -48,8 +48,8 @@ spring:
 
 # redisson 单节点配置
 redisson:
-    single:
-      node: redis://192.168.0.103:6379
+  single:
+    node: redis://192.168.0.103:6379
 
 #mybatis
 mybatis-plus:

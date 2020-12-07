@@ -8,14 +8,14 @@
 
 package com.tingyu.sparkmall.admin.modules.sys.controller;
 
-import com.tingyu.sparkmall.admin.modules.sys.entity.SysRoleEntity;
-import com.tingyu.sparkmall.admin.modules.sys.service.SysRoleMenuService;
-import com.tingyu.sparkmall.admin.modules.sys.service.SysRoleService;
 import com.tingyu.sparkmall.admin.common.annotation.SysLog;
 import com.tingyu.sparkmall.admin.common.utils.Constant;
 import com.tingyu.sparkmall.admin.common.utils.PageUtils;
 import com.tingyu.sparkmall.admin.common.utils.R;
 import com.tingyu.sparkmall.admin.common.validator.ValidatorUtils;
+import com.tingyu.sparkmall.admin.modules.sys.entity.SysRoleEntity;
+import com.tingyu.sparkmall.admin.modules.sys.service.SysRoleMenuService;
+import com.tingyu.sparkmall.admin.modules.sys.service.SysRoleService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

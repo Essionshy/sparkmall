@@ -9,9 +9,9 @@
 package com.tingyu.sparkmall.admin.modules.sys.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.tingyu.sparkmall.admin.modules.sys.dao.SysUserRoleDao;
-import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserRoleEntity;
 import com.tingyu.sparkmall.admin.common.utils.MapUtils;
+import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserRoleEntity;
+import com.tingyu.sparkmall.admin.modules.sys.dao.SysUserRoleDao;
 import com.tingyu.sparkmall.admin.modules.sys.service.SysUserRoleService;
 import org.springframework.stereotype.Service;
 

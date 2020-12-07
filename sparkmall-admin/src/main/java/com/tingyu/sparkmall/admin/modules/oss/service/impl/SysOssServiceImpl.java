@@ -12,8 +12,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tingyu.sparkmall.admin.common.utils.PageUtils;
 import com.tingyu.sparkmall.admin.common.utils.Query;
-import com.tingyu.sparkmall.admin.modules.oss.entity.SysOssEntity;
 import com.tingyu.sparkmall.admin.modules.oss.service.SysOssService;
+import com.tingyu.sparkmall.admin.modules.oss.entity.SysOssEntity;
 import com.tingyu.sparkmall.admin.modules.oss.dao.SysOssDao;
 import org.springframework.stereotype.Service;
 

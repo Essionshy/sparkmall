@@ -1,0 +1,16 @@
+server:
+  port: 20001
+
+
+spring:
+  application:
+    name: sparkmall-job # 任务调度微服务
+  profiles:
+    active: dev # 加载开发环境配置
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mybatis/mapper/**/*Dao.xml
+
+

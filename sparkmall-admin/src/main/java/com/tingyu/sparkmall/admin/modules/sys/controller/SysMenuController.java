@@ -8,13 +8,13 @@
 
 package com.tingyu.sparkmall.admin.modules.sys.controller;
 
-import com.tingyu.sparkmall.admin.modules.sys.entity.SysMenuEntity;
-import com.tingyu.sparkmall.admin.modules.sys.service.ShiroService;
-import com.tingyu.sparkmall.admin.modules.sys.service.SysMenuService;
 import com.tingyu.sparkmall.admin.common.annotation.SysLog;
 import com.tingyu.sparkmall.admin.common.exception.RRException;
 import com.tingyu.sparkmall.admin.common.utils.Constant;
 import com.tingyu.sparkmall.admin.common.utils.R;
+import com.tingyu.sparkmall.admin.modules.sys.entity.SysMenuEntity;
+import com.tingyu.sparkmall.admin.modules.sys.service.ShiroService;
+import com.tingyu.sparkmall.admin.modules.sys.service.SysMenuService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,34 @@
+server:
+  port: 16001
+
+spring:
+  application:
+    name: sparkmall-cart # 购物车服务
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.0.105/sparkmall_cart?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root-xz
+  redis:
+    host: 192.168.0.103
+    port: 6379
+    database: 3
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.0.105:8080
+        port: 8719
+
+mybatis-plus:
+  mapper-locations: classpath*:/mybatis/mapper/**/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+feign:
+  sentinel:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

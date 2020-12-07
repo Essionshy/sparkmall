@@ -9,10 +9,10 @@
 package com.tingyu.sparkmall.admin.modules.sys.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.tingyu.sparkmall.admin.modules.sys.dao.SysUserTokenDao;
+import com.tingyu.sparkmall.admin.common.utils.R;
 import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserTokenEntity;
 import com.tingyu.sparkmall.admin.modules.sys.oauth2.TokenGenerator;
-import com.tingyu.sparkmall.admin.common.utils.R;
+import com.tingyu.sparkmall.admin.modules.sys.dao.SysUserTokenDao;
 import com.tingyu.sparkmall.admin.modules.sys.service.SysUserTokenService;
 import org.springframework.stereotype.Service;
 

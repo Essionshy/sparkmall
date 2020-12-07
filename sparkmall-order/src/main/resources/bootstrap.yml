@@ -1,0 +1,11 @@
+#配置 nacos服务注册中心地址
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.105:8848
+      #        namespace: 94aa592a-ddd9-407d-ac09-9e0a56ab69a4
+      config:
+        server-addr: 192.168.0.105:8848
+        namespace: 94aa592a-ddd9-407d-ac09-9e0a56ab69a4
+

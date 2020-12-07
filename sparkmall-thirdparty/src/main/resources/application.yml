@@ -1,0 +1,8 @@
+server:
+  port: 18001
+
+spring:
+  application:
+    name: sparkmall-thirdparty
+
+

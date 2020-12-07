@@ -8,10 +8,6 @@
 
 package com.tingyu.sparkmall.admin.modules.sys.controller;
 
-import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserEntity;
-import com.tingyu.sparkmall.admin.modules.sys.form.PasswordForm;
-import com.tingyu.sparkmall.admin.modules.sys.service.SysUserRoleService;
-import com.tingyu.sparkmall.admin.modules.sys.service.SysUserService;
 import com.tingyu.sparkmall.admin.common.annotation.SysLog;
 import com.tingyu.sparkmall.admin.common.utils.Constant;
 import com.tingyu.sparkmall.admin.common.utils.PageUtils;
@@ -20,6 +16,10 @@ import com.tingyu.sparkmall.admin.common.validator.Assert;
 import com.tingyu.sparkmall.admin.common.validator.ValidatorUtils;
 import com.tingyu.sparkmall.admin.common.validator.group.AddGroup;
 import com.tingyu.sparkmall.admin.common.validator.group.UpdateGroup;
+import com.tingyu.sparkmall.admin.modules.sys.entity.SysUserEntity;
+import com.tingyu.sparkmall.admin.modules.sys.form.PasswordForm;
+import com.tingyu.sparkmall.admin.modules.sys.service.SysUserRoleService;
+import com.tingyu.sparkmall.admin.modules.sys.service.SysUserService;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.crypto.hash.Sha256Hash;

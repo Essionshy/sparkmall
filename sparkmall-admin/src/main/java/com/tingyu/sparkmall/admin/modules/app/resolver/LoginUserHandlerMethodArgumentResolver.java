@@ -8,10 +8,10 @@
 
 package com.tingyu.sparkmall.admin.modules.app.resolver;
 
-import com.tingyu.sparkmall.admin.modules.app.entity.UserEntity;
+import com.tingyu.sparkmall.admin.modules.app.annotation.LoginUser;
 import com.tingyu.sparkmall.admin.modules.app.interceptor.AuthorizationInterceptor;
 import com.tingyu.sparkmall.admin.modules.app.service.UserService;
-import com.tingyu.sparkmall.admin.modules.app.annotation.LoginUser;
+import com.tingyu.sparkmall.admin.modules.app.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;

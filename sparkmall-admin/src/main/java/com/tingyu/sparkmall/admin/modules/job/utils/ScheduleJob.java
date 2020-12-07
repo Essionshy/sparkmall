@@ -8,9 +8,9 @@
 
 package com.tingyu.sparkmall.admin.modules.job.utils;
 
+import com.tingyu.sparkmall.admin.modules.job.service.ScheduleJobLogService;
 import com.tingyu.sparkmall.admin.common.utils.SpringContextUtils;
 import com.tingyu.sparkmall.admin.modules.job.entity.ScheduleJobLogEntity;
-import com.tingyu.sparkmall.admin.modules.job.service.ScheduleJobLogService;
 import com.tingyu.sparkmall.admin.modules.job.entity.ScheduleJobEntity;
 import org.apache.commons.lang.StringUtils;
 import org.quartz.JobExecutionContext;
@@ -33,9 +33,8 @@ public class ScheduleJob extends QuartzJobBean {
 
     @Override
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-           ScheduleJobEntity scheduleJob = (ScheduleJobEntity) context.getMergedJobDataMap()
+        ScheduleJobEntity scheduleJob = (ScheduleJobEntity) context.getMergedJobDataMap()
                 .get(ScheduleJobEntity.JOB_PARAM_KEY);
-
 
 
         //获取spring bean

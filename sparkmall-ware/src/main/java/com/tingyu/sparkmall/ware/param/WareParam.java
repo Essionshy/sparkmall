@@ -12,6 +12,15 @@ import java.math.BigDecimal;
 @Data
 public class WareParam {
 
+    /*分页参数*/
+    private Integer page;
+
+    private Long limit;
+
+    /**
+     * 封装属性
+     */
+
     private Long id;
 
     private String name;
@@ -19,4 +28,8 @@ public class WareParam {
     private String productNo;
 
     private BigDecimal count;
+
+    /*查询条件*/
+
+    private String key;
 }

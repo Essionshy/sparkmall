@@ -43,7 +43,7 @@
         <lombok.version>1.18.4</lombok.version>
 
         <!--wagon plugin 配置-->
-        <service-path>/work/sparkmall</service-path>
+        <com.tingyu.sparkmall.msg.service-path>/work/sparkmall</com.tingyu.sparkmall.msg.service-path>
         <pack-name>${project.artifactId}-${project.version}.jar</pack-name>
         <remote-addr>192.168.0.103:22</remote-addr>
         <remote-username>root</remote-username>
@@ -83,12 +83,12 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-<!--        热部署导致类型加载问题-->
-   <!--     <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>-->
+        <!--        热部署导致类型加载问题-->
+        <!--     <dependency>
+                 <groupId>org.springframework.boot</groupId>
+                 <artifactId>spring-boot-devtools</artifactId>
+                 <optional>true</optional>
+             </dependency>-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -273,14 +273,15 @@
                 <version>1.0</version>
                 <configuration>
                     <fromFile>target/${pack-name}</fromFile>
-                    <url><![CDATA[scp://${remote-username}:${remote-passwd}@${remote-addr}${service-path}]]></url>
+                    <url>
+                        <![CDATA[scp://${remote-username}:${remote-passwd}@${remote-addr}${com.tingyu.sparkmall.msg.service-path}]]></url>
                     <commands>
                         <!-- Kill Old Process -->
                         <command>kill -9 `ps -ef |grep ${project.artifactId}.jar|grep -v "grep" |awk '{print $2}'`
                         </command>
                         <!-- Restart jar package，write result into renren.log -->
                         <command>
-                            <![CDATA[nohup java -jar ${service-path}/${pack-name} --spring.profiles.active=test > ${service-path}/renren.log 2>&1 & ]]></command>
+                            <![CDATA[nohup java -jar ${com.tingyu.sparkmall.msg.service-path}/${pack-name} --spring.profiles.active=test > ${com.tingyu.sparkmall.msg.service-path}/renren.log 2>&1 & ]]></command>
                         <command><![CDATA[netstat -nptl]]></command>
                         <command><![CDATA[ps -ef | grep java | grep -v grep]]></command>
                     </commands>

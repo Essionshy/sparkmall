@@ -9,9 +9,9 @@
 package com.tingyu.sparkmall.admin.modules.sys.redis;
 
 
-import com.tingyu.sparkmall.admin.modules.sys.entity.SysConfigEntity;
 import com.tingyu.sparkmall.admin.common.utils.RedisKeys;
 import com.tingyu.sparkmall.admin.common.utils.RedisUtils;
+import com.tingyu.sparkmall.admin.modules.sys.entity.SysConfigEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

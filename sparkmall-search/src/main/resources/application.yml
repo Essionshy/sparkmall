@@ -1,0 +1,15 @@
+server:
+  port: 40001
+
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: sparkmall-search
+
+
+es:
+  host: 192.168.0.102
+  port: 9200
+  scheme: http

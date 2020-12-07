@@ -16,6 +16,12 @@ spring:
           enabled: true
 
       routes:
+        - id: member_route #配置会员服务路由
+          uri: lb://sparkmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
         - id: product_route #配置商品服务路由
           uri: lb://sparkmall-product
           predicates:
@@ -29,13 +35,25 @@ spring:
             - Path=/api/lottery/**
           filters:
             - RewritePath=/api(?<segment>/?.*), /$\{segment}
-        - id: lottery_route #配置订单服务系统路由
+        - id: cart_route # 配置购物车路由
+          uri: lb://sparkmall-cart
+          predicates:
+            - Path=/api/cart/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
+        - id: order_route #配置订单服务系统路由
           uri: lb://sparkmall-order
           predicates:
             - Path=/api/order/**
           filters:
             - RewritePath=/api(?<segment>/?.*), /$\{segment}
-        - id: lottery_route #配置库存服务系统路由
+        - id: pay_route #配置支付服务系统路由
+          uri: lb://sparkmall-pay
+          predicates:
+            - Path=/api/pay/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
+        - id: ware_route #配置库存服务系统路由
           uri: lb://sparkmall-ware
           predicates:
             - Path=/api/ware/**
@@ -48,6 +66,10 @@ spring:
           filters:
             - RewritePath=/api(?<segment>/?.*), /sparkmall-admin/$\{segment}
 
+        - id: sparkmall_host_route #配置后台管理路由
+          uri: lb://sparkmall-product
+          predicates:
+            - Host=**.tingyu.com,tingyu.com
 
 #      globalcors:  路径模糊的放在后面，不然会抢先路由
 #        cors-configurations:

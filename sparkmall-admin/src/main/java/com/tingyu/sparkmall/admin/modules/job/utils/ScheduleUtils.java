@@ -8,9 +8,9 @@
 
 package com.tingyu.sparkmall.admin.modules.job.utils;
 
+import com.tingyu.sparkmall.admin.modules.job.entity.ScheduleJobEntity;
 import com.tingyu.sparkmall.admin.common.exception.RRException;
 import com.tingyu.sparkmall.admin.common.utils.Constant;
-import com.tingyu.sparkmall.admin.modules.job.entity.ScheduleJobEntity;
 import org.quartz.*;
 
 /**
