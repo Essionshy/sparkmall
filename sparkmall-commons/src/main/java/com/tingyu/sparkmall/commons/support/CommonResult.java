@@ -12,32 +12,60 @@ import lombok.experimental.Accessors;
  * @Version sparkmall
  */
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @ToString
 @Accessors(chain = true)
 public class CommonResult<T> {
 
-    private Integer code;
+    private int code;
 
     private String msg;
 
-    private long count;
 
     private T data;
 
-    public CommonResult(Long count, T data) {
-        this(null, "", count, data);
+
+    public CommonResult(int code, String msg) {
+        this(code, msg, null);
     }
 
-    public CommonResult(Integer code, String msg) {
-        this(code, msg, 0, null);
+
+
+    /**
+     * 默认成功消息
+     * @return
+     */
+    public static CommonResult success(){
+        return new CommonResult(0,"success");
     }
 
-    public CommonResult(Integer code, String msg, T data) {
-        this(code, msg, 0, data);
+    /**
+     * 默认错误消息
+     * @return
+     */
+    public static CommonResult error(){
+        return new CommonResult(5000,"error");
     }
+
+
+    /**
+     * 自定义成功消息
+     * @return
+     */
+    public static CommonResult success(int code,String msg){
+        return new CommonResult(code,msg);
+    }
+
+    /**
+     * 自定义错误消息
+     * @return
+     */
+    public static CommonResult error(int code,String msg){
+        return new CommonResult(code,msg);
+    }
+
 
 
 }

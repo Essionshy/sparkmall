@@ -17,7 +17,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
         DataSourceAutoConfiguration.class})
 @EnableDiscoveryClient
 @EnableFeignClients
-
 public class SparkmallMessageApplication {
     public static void main(String[] args) {
         SpringApplication.run(SparkmallMessageApplication.class, args);

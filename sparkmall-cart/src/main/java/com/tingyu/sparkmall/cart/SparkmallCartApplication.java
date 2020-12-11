@@ -13,7 +13,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-
 public class SparkmallCartApplication {
     public static void main(String[] args) {
         SpringApplication.run(SparkmallCartApplication.class, args);

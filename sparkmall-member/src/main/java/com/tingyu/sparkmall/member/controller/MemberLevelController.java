@@ -1,98 +1,90 @@
 package com.tingyu.sparkmall.member.controller;
 
-
-import com.tingyu.sparkmall.commons.utils.R;
-import com.tingyu.sparkmall.member.param.MemberLevelParam;
-import com.tingyu.sparkmall.member.service.MemberLevelService;
-import com.tingyu.sparkmall.member.vo.MemberLevelVo;
-import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tingyu.sparkmall.member.entity.MemberLevelEntity;
+import com.tingyu.sparkmall.member.service.MemberLevelService;
+import com.tingyu.sparkmall.commons.utils.PageUtils;
+import com.tingyu.sparkmall.commons.utils.R;
+
+
+
 /**
- * @Author essionshy
- * @Create 2020/11/29 19:06
- * @Version renren-fast
+ * 浼氬憳绛夌骇琛
+ *
+ * @author essionshy
+ * @email 1218817610@qq.com
+ * @date 2020-12-11 16:51:21
  */
 @RestController
-@RequestMapping("/member/level")
-@Slf4j
+@RequestMapping("member/memberlevel")
 public class MemberLevelController {
-
-    @Resource
+    @Autowired
     private MemberLevelService memberLevelService;
 
-    @ApiOperation("条件分页查询会员等级列表")
-    @PostMapping("list/page")
-    public R list(@RequestBody MemberLevelParam param) {
-        Map<String, Object> map = memberLevelService.queryPage(param);
-        return R.ok().put(map);
-    }
+    /**
+     * 列表
+     */
+    @RequestMapping("/list")
+    @RequiresPermissions("member:memberlevel:list")
+    public R list(@RequestParam Map<String, Object> params){
+        PageUtils page = memberLevelService.queryPage(params);
 
-    @ApiOperation("查询全部会员等级列表")
-    @GetMapping("list")
-    public R list() {
-        List<MemberLevelVo> memberLevelVos = memberLevelService.listAll();
-        return R.ok().put("items", memberLevelVos);
-    }
-
-    @ApiOperation("根据会员等级ID查询会员等级信息")
-    @GetMapping("get/{id}")
-    public R get(@PathVariable Integer id) {
-        MemberLevelVo memberLevelVo = memberLevelService.get(id);
-        return R.ok().put("item", memberLevelVo);
-    }
-
-    @ApiOperation("新增会员等级")
-    @PostMapping("save")
-    public R save(@RequestBody MemberLevelParam param) {
-
-        boolean isSuccess = memberLevelService.save(param);
-        if (isSuccess) {
-            return R.ok();
-        } else {
-            return R.error();
-        }
-    }
-
-    @ApiOperation("更新会员等级")
-    @PostMapping("update")
-    public R update(@RequestBody MemberLevelParam param) {
-
-        boolean isSuccess = memberLevelService.update(param);
-        if (isSuccess) {
-            return R.ok();
-        } else {
-            return R.error();
-        }
+        return R.ok().put("page", page);
     }
 
 
-    @ApiOperation("更新会员等级")
-    @DeleteMapping("delete")
-    public R delete(@RequestBody Integer[] ids) {
+    /**
+     * 信息
+     */
+    @RequestMapping("/info/{id}")
+    @RequiresPermissions("member:memberlevel:info")
+    public R info(@PathVariable("id") Long id){
+		MemberLevelEntity memberLevel = memberLevelService.getById(id);
 
-        boolean isSuccess = memberLevelService.removeByIds(Arrays.asList(ids));
-        if (isSuccess) {
-            return R.ok();
-        } else {
-            return R.error();
-        }
+        return R.ok().put("memberLevel", memberLevel);
     }
 
-    @ApiOperation("会员等级分配权益")
-    @PostMapping("allot/{id}")
-    public R allot(@PathVariable Integer id, Integer[] rithsIds) {
-        boolean isSuccess = memberLevelService.allot(id, rithsIds);
-        if (isSuccess) {
-            return R.ok();
-        } else {
-            return R.error();
-        }
+    /**
+     * 保存
+     */
+    @RequestMapping("/save")
+    @RequiresPermissions("member:memberlevel:save")
+    public R save(@RequestBody MemberLevelEntity memberLevel){
+		memberLevelService.save(memberLevel);
+
+        return R.ok();
     }
+
+    /**
+     * 修改
+     */
+    @RequestMapping("/update")
+    @RequiresPermissions("member:memberlevel:update")
+    public R update(@RequestBody MemberLevelEntity memberLevel){
+		memberLevelService.updateById(memberLevel);
+
+        return R.ok();
+    }
+
+    /**
+     * 删除
+     */
+    @RequestMapping("/delete")
+    @RequiresPermissions("member:memberlevel:delete")
+    public R delete(@RequestBody Long[] ids){
+		memberLevelService.removeByIds(Arrays.asList(ids));
+
+        return R.ok();
+    }
+
 }

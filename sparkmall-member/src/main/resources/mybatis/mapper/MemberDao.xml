@@ -3,19 +3,28 @@
 
 <mapper namespace="com.tingyu.sparkmall.member.dao.MemberDao">
 
-    <!-- 可根据自己的需求，是否要使用 -->
-    <!--  <resultMap type="com.tingyu.sparkmall.member.entity.MemberEntity" id="memberMap">
-          <result property="userId" column="user_id"/>
-          <result property="username" column="username"/>
-          <result property="phone" column="phone"/>
-          <result property="levelId" column="level_id"/>
-          <result property="address" column="address"/>
-          <result property="audit" column="audit"/>
-          <result property="email" column="email"/>
-          <result property="deleteStatus" column="delete_status"/>
-          <result property="createTime" column="create_time"/>
-          <result property="updateTime" column="update_time"/>
-      </resultMap>-->
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.tingyu.sparkmall.member.entity.MemberEntity" id="memberMap">
+        <result property="id" column="id"/>
+        <result property="levelId" column="level_id"/>
+        <result property="membername" column="membername"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+        <result property="nickname" column="nickname"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="header" column="header"/>
+        <result property="gender" column="gender"/>
+        <result property="birthday" column="birthday"/>
+        <result property="city" column="city"/>
+        <result property="job" column="job"/>
+        <result property="sign" column="sign"/>
+        <result property="sourceType" column="source_type"/>
+        <result property="integration" column="integration"/>
+        <result property="growth" column="growth"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
 
 
 </mapper>

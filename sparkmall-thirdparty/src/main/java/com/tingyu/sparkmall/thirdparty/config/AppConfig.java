@@ -1,5 +1,6 @@
 package com.tingyu.sparkmall.thirdparty.config;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -7,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @Create 2020/12/2 21:11
  * @Version renren-fast
  */
+
 @Configuration
 public class AppConfig {
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tingyu.sparkmall.member.dao.MemberCollectShopDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.tingyu.sparkmall.member.entity.MemberCollectShopEntity" id="memberCollectShopMap">
+        <result property="id" column="id"/>
+        <result property="memberId" column="member_id"/>
+        <result property="shopId" column="shop_id"/>
+        <result property="shopName" column="shop_name"/>
+        <result property="shopLogo" column="shop_logo"/>
+        <result property="createtime" column="createTime"/>
+    </resultMap>
+
+
+</mapper>

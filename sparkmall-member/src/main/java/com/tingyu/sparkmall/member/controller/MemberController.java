@@ -1,29 +1,32 @@
 package com.tingyu.sparkmall.member.controller;
 
-import com.tingyu.sparkmall.commons.dto.MemberDTO;
-import com.tingyu.sparkmall.commons.utils.PageUtils;
-import com.tingyu.sparkmall.commons.utils.R;
-import com.tingyu.sparkmall.member.entity.MemberEntity;
-import com.tingyu.sparkmall.member.service.MemberService;
-import com.tingyu.sparkmall.member.vo.MemberVo;
-import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tingyu.sparkmall.member.entity.MemberEntity;
+import com.tingyu.sparkmall.member.service.MemberService;
+import com.tingyu.sparkmall.commons.utils.PageUtils;
+import com.tingyu.sparkmall.commons.utils.R;
+
+
 
 /**
+ * 鐢ㄦ埛琛
+ *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-05-11 22:03:09
+ * @date 2020-12-11 16:51:21
  */
-@Slf4j
 @RestController
-@RequestMapping("/member")
+@RequestMapping("member/member")
 public class MemberController {
     @Autowired
     private MemberService memberService;
@@ -31,11 +34,11 @@ public class MemberController {
     /**
      * 列表
      */
-    @ApiOperation("查询会员列表")
     @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params) {
-        log.info("请求查询会员列表");
+    @RequiresPermissions("member:member:list")
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberService.queryPage(params);
+
         return R.ok().put("page", page);
     }
 
@@ -43,23 +46,21 @@ public class MemberController {
     /**
      * 信息
      */
-    @GetMapping("/info/{userId}")
-    public R info(@PathVariable("userId") Long userId) {
-        MemberVo memberVo = null;
-        MemberEntity member = memberService.getById(userId);
-        if (member != null) {
-            memberVo = new MemberVo();
-            BeanUtils.copyProperties(member, memberVo);
-        }
-        return R.ok().put("member", memberVo);
+    @RequestMapping("/info/{id}")
+    @RequiresPermissions("member:member:info")
+    public R info(@PathVariable("id") Long id){
+		MemberEntity member = memberService.getById(id);
+
+        return R.ok().put("member", member);
     }
 
     /**
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody MemberEntity member) {
-        memberService.save(member);
+    @RequiresPermissions("member:member:save")
+    public R save(@RequestBody MemberEntity member){
+		memberService.save(member);
 
         return R.ok();
     }
@@ -68,8 +69,9 @@ public class MemberController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody MemberEntity member) {
-        memberService.updateById(member);
+    @RequiresPermissions("member:member:update")
+    public R update(@RequestBody MemberEntity member){
+		memberService.updateById(member);
 
         return R.ok();
     }
@@ -77,22 +79,12 @@ public class MemberController {
     /**
      * 删除
      */
-    @DeleteMapping("/delete")
-    public R delete(@RequestBody Long[] ids) {
-        memberService.removeByIds(Arrays.asList(ids));
+    @RequestMapping("/delete")
+    @RequiresPermissions("member:member:delete")
+    public R delete(@RequestBody Long[] ids){
+		memberService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
-    /**
-     * 远程调用
-     */
-    @ApiOperation("根据会员号查询会员信息")
-    @GetMapping("/feign/info/{memberNo}")
-    public MemberDTO getByMemberNo(@PathVariable("memberNo") String memberNo) {
-        MemberDTO member = memberService.getByMemberNo(memberNo);
-        return member;
-    }
-
 
 }

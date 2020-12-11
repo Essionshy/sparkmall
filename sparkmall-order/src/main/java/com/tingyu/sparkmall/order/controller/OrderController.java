@@ -1,56 +1,85 @@
 package com.tingyu.sparkmall.order.controller;
 
-import com.tingyu.sparkmall.commons.dto.OrderDTO;
+import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
-import com.tingyu.sparkmall.order.param.OrderParam;
+import com.tingyu.sparkmall.order.entity.OrderEntity;
 import com.tingyu.sparkmall.order.service.OrderService;
-import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
+
+
+
 /**
- * 订单模块
+ * 璁㈠崟
  *
- * @Author essionshy
- * @Create 2020/11/27 22:22
- * @Version renren-fast
+ * @author essionshy
+ * @email 1218817610@qq.com
+ * @date 2020-12-11 16:35:37
  */
 @RestController
-@RequestMapping("order")
+@RequestMapping("order/order")
 public class OrderController {
-
     @Autowired
     private OrderService orderService;
 
+    /**
+     * 列表
+     */
+    @RequestMapping("/list")
+    @RequiresPermissions("order:order:list")
+    public R list(@RequestParam Map<String, Object> params){
+        PageUtils page = orderService.queryPage(params);
 
-    @ApiOperation("创建订单")
-    @PostMapping("create")
-    public R create(@RequestBody OrderParam param) {
-        orderService.create(param);
+        return R.ok().put("page", page);
+    }
+
+
+    /**
+     * 信息
+     */
+    @RequestMapping("/info/{id}")
+    @RequiresPermissions("order:order:info")
+    public R info(@PathVariable("id") Long id){
+		OrderEntity order = orderService.getById(id);
+
+        return R.ok().put("order", order);
+    }
+
+    /**
+     * 保存
+     */
+    @RequestMapping("/save")
+    @RequiresPermissions("order:order:save")
+    public R save(@RequestBody OrderEntity order){
+		orderService.save(order);
+
         return R.ok();
     }
 
-    @ApiOperation("根据订单号删除订单")
-    @DeleteMapping("delete/{orderNo}")
-    public R delete(@PathVariable("orderNo") String orderNo) {
-        orderService.deleteByOrderNo(orderNo);
+    /**
+     * 修改
+     */
+    @RequestMapping("/update")
+    @RequiresPermissions("order:order:update")
+    public R update(@RequestBody OrderEntity order){
+		orderService.updateById(order);
+
         return R.ok();
     }
 
-    @ApiOperation("根据订单列表查询订单集合")
-    @GetMapping("get/{orderNo}")
-    public OrderDTO getByOrderNo(@PathVariable("orderNo") String orderNo) {
+    /**
+     * 删除
+     */
+    @RequestMapping("/delete")
+    @RequiresPermissions("order:order:delete")
+    public R delete(@RequestBody Long[] ids){
+		orderService.removeByIds(Arrays.asList(ids));
 
-        OrderDTO OrderDTO = orderService.getByOrderNo(orderNo);
-
-        return OrderDTO;
-    }
-
-    @ApiOperation("根据订单号修改订单状态")
-    @GetMapping("order/update/status/{orderNo}/{status}")
-    public boolean updateOrderStatus(@PathVariable("orderNo") String orderNo, @PathVariable("status") int status) {
-
-        return orderService.updateOrderStatus(orderNo, status);
+        return R.ok();
     }
 
 }

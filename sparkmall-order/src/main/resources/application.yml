@@ -23,8 +23,9 @@ spring:
 
 
 mybatis-plus:
-  mapper-locations: classpath*:/mybatis/mapper/**/*Mapper.xml
-
+  mapper-locations: classpath*:/mybatis/mapper/**/*Dao.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # 配置 feign 整合 sentinel
 

@@ -14,6 +14,7 @@ public enum OrderStatus {
     OUT_WARE, //出库
     TRANPORT, //运输中
     PEISONG, //配送中
-    COMPLETED; //已完成
+    COMPLETED, //已完成
+    CANCEL; //已取消
 
 }

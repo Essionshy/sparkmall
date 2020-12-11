@@ -14,4 +14,6 @@ public class UserInfoDTO {
 
     private String userKey;  //保存临时用户
 
+    private Boolean hasTempUserKey = false; //是否有临时用户Key,不论用户是否登录，都需要保存一个临时用户
+
 }

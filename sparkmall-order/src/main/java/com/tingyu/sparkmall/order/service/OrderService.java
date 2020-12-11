@@ -1,24 +1,24 @@
 package com.tingyu.sparkmall.order.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.tingyu.sparkmall.commons.dto.OrderDTO;
+import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.order.entity.OrderEntity;
-import com.tingyu.sparkmall.order.param.OrderParam;
+
+import java.util.Map;
 
 /**
- * @Author essionshy
- * @Create 2020/11/27 22:29
- * @Version renren-fast
+ * 璁㈠崟
+ *
+ * @author essionshy
+ * @email 1218817610@qq.com
+ * @date 2020-12-11 16:35:37
  */
 public interface OrderService extends IService<OrderEntity> {
 
+    PageUtils queryPage(Map<String, Object> params);
 
-    boolean create(OrderParam param);
+    Integer getOrderStatus(String orderNo);
 
-    boolean deleteByOrderNo(String orderNo);
-
-
-    OrderDTO getByOrderNo(String orderNo);
-
-    boolean updateOrderStatus(String orderNo, int status);
+    void deleteByOrderNo(String orderNo);
 }
+

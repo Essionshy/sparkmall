@@ -27,6 +27,8 @@ public class OrderDTO implements Serializable {
 
     private Integer payType; //支付方式
 
+    private Integer status; //订单状态
+
     private List<ProductDTO> products;//商品编号列表
 
     private BigDecimal count; //数量/重量

@@ -24,7 +24,7 @@ public class MemberServiceTest {
     void testSave() {
         log.debug("保存会员开始...");
         MemberEntity member = new MemberEntity();
-        member.setName("tom");
+        member.setUsername("tom");
 
         memberService.save(member);
         log.debug("保存会员完成...");

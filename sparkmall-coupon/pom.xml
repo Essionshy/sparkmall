@@ -12,7 +12,7 @@
     <artifactId>sparkmall-coupon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sparkmall-coupon</name>
-    <description>火星商城-优惠券服务</description>
+    <description>火星商城-优惠服务系统</description>
 
     <properties>
         <java.version>1.8</java.version>

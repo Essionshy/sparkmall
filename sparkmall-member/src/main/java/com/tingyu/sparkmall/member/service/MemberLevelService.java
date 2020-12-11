@@ -1,36 +1,20 @@
 package com.tingyu.sparkmall.member.service;
 
-
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.member.entity.MemberLevelEntity;
-import com.tingyu.sparkmall.member.param.MemberLevelParam;
-import com.tingyu.sparkmall.member.vo.MemberLevelVo;
 
-import java.util.List;
 import java.util.Map;
 
 /**
- * @Author essionshy
- * @Create 2020/6/16 21:31
- * @Version renren-fast
+ * 浼氬憳绛夌骇琛
+ *
+ * @author essionshy
+ * @email 1218817610@qq.com
+ * @date 2020-12-11 16:51:21
  */
 public interface MemberLevelService extends IService<MemberLevelEntity> {
-    List<MemberLevelVo> listAll();
 
-    MemberLevelVo get(Integer id);
-
-    boolean save(MemberLevelParam param);
-
-    boolean update(MemberLevelParam param);
-
-    /**
-     * 给会员等级分配会员权益
-     *
-     * @param id
-     * @param rithsIds
-     * @return
-     */
-    boolean allot(Integer id, Integer[] rithsIds);
-
-    Map<String, Object> queryPage(MemberLevelParam param);
+    PageUtils queryPage(Map<String, Object> params);
 }
+

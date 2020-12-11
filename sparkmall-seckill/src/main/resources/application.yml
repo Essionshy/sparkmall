@@ -1,0 +1,15 @@
+server:
+  port: 19001
+spring:
+  application:
+    name: sparkmakl-seckill
+
+
+  rabbitmq:
+    virtual-host: /
+    host: 192.168.0.103
+  redis:
+    host: 192.168.0.103
+
+  thymeleaf:
+    cache: false

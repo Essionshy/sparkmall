@@ -1,0 +1,20 @@
+server:
+  port: 7001
+
+
+spring:
+  application:
+    name: sparkmall-auth # 认证微服务
+  profiles:
+    active: dev # 加载开发环境配置
+  thymeleaf:
+    cache: false
+  session:
+    store-type: redis
+
+management:
+  health:
+    redis:
+      enabled: false
+    rabbit:
+      enabled: false

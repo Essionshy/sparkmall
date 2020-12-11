@@ -13,4 +13,3 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:/mybatis/mapper/**/*Dao.xml
 
-

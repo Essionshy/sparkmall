@@ -29,6 +29,8 @@ public class MessageProviderImpl implements MessageProvider {
     //注册消息发送通道
     @Resource
     private MessageChannel output; //output 固定
+
+
     private boolean isSuccess;
 
     @Override

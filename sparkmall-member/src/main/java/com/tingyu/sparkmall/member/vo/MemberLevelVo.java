@@ -31,6 +31,8 @@ public class MemberLevelVo implements Serializable {
 
     private Integer deleted;
 
+
+
     List<MemberRightsVo> memberRights;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

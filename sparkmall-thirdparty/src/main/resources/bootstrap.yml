@@ -4,8 +4,9 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.0.105:8848
-      #        namespace: 94aa592a-ddd9-407d-ac09-9e0a56ab69a4
+      #        namespace: 70b84aa6-8353-477d-b2ad-c9c6a1d248cc
       config:
         server-addr: 192.168.0.105:8848
-        namespace: 94aa592a-ddd9-407d-ac09-9e0a56ab69a4
+        namespace: 70b84aa6-8353-477d-b2ad-c9c6a1d248cc
+        file-extension: yaml
 

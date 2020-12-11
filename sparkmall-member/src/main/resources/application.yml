@@ -2,17 +2,12 @@ server:
   port: 9001
 
 spring:
-
   # Redis
   redis:
     host: 192.168.0.103
     port: 6379
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.0.105:8848
-
-
+  profiles:
+    active: dev
 
 logging:
   level:

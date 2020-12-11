@@ -45,7 +45,7 @@ public class LotteryListener {
         Long userId = (Long) data.get("userId");
         Integer prizeId = (Integer) data.get("prizeId");
         RecordEntity record = new RecordEntity();
-        MemberDTO member = memberFeignService.getMemberInfo(userId);
+        MemberDTO member = memberFeignService.getByMemberNo(userId.toString());
 
 
         if (member != null) {
