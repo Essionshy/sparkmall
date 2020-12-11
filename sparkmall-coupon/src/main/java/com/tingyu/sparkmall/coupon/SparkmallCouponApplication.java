@@ -1,10 +1,10 @@
 package com.tingyu.sparkmall.coupon;
 
+import com.tingyu.sparkmall.commons.annotation.EnableLogAspect;
 import com.tingyu.sparkmall.coupon.bean.CustomImportBeanDefinitionRegistrar;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
 /**
@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Import;
  * @Create 2020/12/5 11:55
  * @Version renren-fast
  */
+@EnableLogAspect
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableAspectJAutoProxy
 @Import({CustomImportBeanDefinitionRegistrar.class})
 public class SparkmallCouponApplication {
 

@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.coupon.bean;
 
-import com.tingyu.sparkmall.coupon.aspect.LogAspect;
+import com.tingyu.sparkmall.commons.aspect.LogAspect;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;

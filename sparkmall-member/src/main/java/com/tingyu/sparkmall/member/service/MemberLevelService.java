@@ -7,7 +7,7 @@ import com.tingyu.sparkmall.member.entity.MemberLevelEntity;
 import java.util.Map;
 
 /**
- * 浼氬憳绛夌骇琛
+ * 会员等级服务类
  *
  * @author essionshy
  * @email 1218817610@qq.com
@@ -16,5 +16,12 @@ import java.util.Map;
 public interface MemberLevelService extends IService<MemberLevelEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    /**
+     * 会员默认等级ID
+     * @return
+     */
+
+    Long getDefaultLevelId();
 }
 

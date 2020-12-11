@@ -1,25 +1,23 @@
 package com.tingyu.sparkmall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.tingyu.sparkmall.coupon.entity.SeckillSessionEntity;
-import com.tingyu.sparkmall.coupon.service.SeckillSessionService;
+import com.tingyu.sparkmall.commons.dto.seckill.SeckillSessionDTO;
+import com.tingyu.sparkmall.commons.support.CommonResult;
 import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
+import com.tingyu.sparkmall.coupon.entity.SeckillSessionEntity;
+import com.tingyu.sparkmall.coupon.service.SeckillSessionService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 
 
 /**
- * 绉掓潃娲诲姩鍦烘?
+ * 秒杀场次
  *
  * @author essionshy
  * @email 1218817610@qq.com
@@ -31,7 +29,7 @@ public class SeckillSessionController {
     @Autowired
     private SeckillSessionService seckillSessionService;
 
-    /**
+  /**
      * 列表
      */
     @RequestMapping("/list")
@@ -85,6 +83,17 @@ public class SeckillSessionController {
 		seckillSessionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
+    }
+
+    /**
+     * 远程调用
+     *
+     */
+    @GetMapping("/listLatest3DaysSessions")
+    CommonResult<List<SeckillSessionDTO>> listLatest3DaysSessions(){
+        List<SeckillSessionDTO> sessions = seckillSessionService.listLatest3DaysSessions();
+
+        return CommonResult.success().setData(sessions);
     }
 
 }

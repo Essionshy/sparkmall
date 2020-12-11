@@ -29,8 +29,7 @@ class SparkmallMemberApplicationTests {
     void testInsertMemberLevle() {
         MemberLevelEntity memberLevelEntity = new MemberLevelEntity();
 
-        memberLevelEntity.setCode("2000");
-        memberLevelEntity.setDescription("青铜");
+
 
         boolean save = memberLevelService.save(memberLevelEntity);
         log.info("保存成功：【{}】", save);

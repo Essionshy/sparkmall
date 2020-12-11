@@ -26,7 +26,7 @@ import java.util.Map;
  * @author Mark sunlightcs@gmail.com
  */
 @RestController
-@RequestMapping("/job/schedule")
+@RequestMapping("job/schedule")
 public class ScheduleJobController {
 
     @Resource
@@ -76,7 +76,7 @@ public class ScheduleJobController {
      */
     @SysLog
     @ApiOperation("修改定时任务")
-    @PutMapping("/update")
+    @PostMapping("/update")
     public R update(@RequestBody ScheduleJobEntity scheduleJob) {
         ValidatorUtils.validateEntity(scheduleJob);
 

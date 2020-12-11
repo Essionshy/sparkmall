@@ -1,6 +1,5 @@
 package com.tingyu.sparkmall.auth.service.impl;
 
-import com.alibaba.fastjson.TypeReference;
 import com.tingyu.sparkmall.auth.feign.MemberFeignService;
 import com.tingyu.sparkmall.auth.feign.ThirdPartyFeignService;
 import com.tingyu.sparkmall.auth.param.MemberLoginParam;
@@ -10,7 +9,7 @@ import com.tingyu.sparkmall.auth.utils.VerifyCodeGeneratorUtils;
 import com.tingyu.sparkmall.commons.constant.AuthServerConstant;
 import com.tingyu.sparkmall.commons.dto.MemberDTO;
 import com.tingyu.sparkmall.commons.exception.ResultException;
-import com.tingyu.sparkmall.commons.utils.R;
+import com.tingyu.sparkmall.commons.support.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -84,7 +83,7 @@ public class LoginServiceImpl implements LoginService {
         }
 
         //调用第三方短信服务发送验证码 TODO 开启短信验证码功能
-         thirdPartyFeignService.sendVerifyCode(phone, verifyCode);
+        // thirdPartyFeignService.sendVerifyCode(phone, verifyCode);
 
 
     }
@@ -132,26 +131,18 @@ public class LoginServiceImpl implements LoginService {
         //验证码校验通过，则删除Redis 中保存的验证码
         stringRedisTemplate.delete(AuthServerConstant.SMS_VERIFY_CODE_KEY_PREFIX + param.getPhone());
         //调用会员远程服务进行注册
-        R register = memberFeignService.register(param);
+        CommonResult register = memberFeignService.register(param);
 
-
-        if (0 == (int) register.get("code")) {
+        if (register.getCode() == 0) {
             //注册成功
             log.info("注册成功");
             return "redirect:http://auth.sparkmall.com/login.html";
         } else {
             log.info("注册失败");
             Map<String, String> errors = new HashMap<>();
-            String msg = register.getData("msg", new TypeReference<String>() {
-            });
-            errors.put("errors", msg);
-
+            errors.put("errors", register.getMsg());
             return "redirect:http://auth.sparkmall.com/register.html";
-
-
         }
-
-
     }
 
     @Override
@@ -162,11 +153,14 @@ public class LoginServiceImpl implements LoginService {
         Map<String, String> errors = new HashMap<>();
 
         //调用会员服务远程登录
-        MemberDTO loginUser = memberFeignService.login(param);
-        if (loginUser == null) {
+        CommonResult<MemberDTO> result = memberFeignService.login(param);
+
+        MemberDTO loginUser = result.getData();
+
+        if (result.getCode() != 0) {
             //登录失败,重定向到登录页面，并提示账号或密码错误
             log.info("登录失败");
-            errors.put("msg", "用户名或密码错误");
+            errors.put("msg", result.getMsg());
             redirectAttributes.addFlashAttribute("errors", errors);
             return "redirect:http://auth.sparkmall.com/login.html";
 

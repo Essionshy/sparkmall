@@ -2,13 +2,13 @@ package com.tingyu.sparkmall.coupon.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 绉掓潃娲诲姩
+ * 秒杀促销实体类
  * 
  * @author essionshy
  * @email 1218817610@qq.com
@@ -25,27 +25,27 @@ public class SeckillPromotionEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * 娲诲姩鏍囬?
+	 * 名称
 	 */
 	private String title;
 	/**
-	 * 寮??鏃ユ湡
+	 * 起始时间
 	 */
 	private Date startTime;
 	/**
-	 * 缁撴潫鏃ユ湡
+	 * 结束时间
 	 */
 	private Date endTime;
 	/**
-	 * 涓婁笅绾跨姸鎬
+	 * 启用状态
 	 */
 	private Integer status;
 	/**
-	 * 鍒涘缓鏃堕棿
+	 * 创建时间
 	 */
 	private Date createTime;
 	/**
-	 * 鍒涘缓浜
+	 * 创建人ID
 	 */
 	private Long userId;
 

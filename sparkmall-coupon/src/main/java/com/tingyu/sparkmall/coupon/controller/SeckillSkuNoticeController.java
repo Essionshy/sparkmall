@@ -1,25 +1,20 @@
 package com.tingyu.sparkmall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.tingyu.sparkmall.coupon.entity.SeckillSkuNoticeEntity;
-import com.tingyu.sparkmall.coupon.service.SeckillSkuNoticeService;
 import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
+import com.tingyu.sparkmall.coupon.entity.SeckillSkuNoticeEntity;
+import com.tingyu.sparkmall.coupon.service.SeckillSkuNoticeService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
- * 绉掓潃鍟嗗搧閫氱煡璁㈤槄
+ * 秒杀商品通知
  *
  * @author essionshy
  * @email 1218817610@qq.com

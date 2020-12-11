@@ -40,7 +40,12 @@ spring:
           uri: lb://sparkmall-cart
           predicates:
             - Host=cart.sparkmall.com
-
+        - id: job_route #配置定时任务系统路由
+          uri: lb://sparkmall-job
+          predicates:
+            - Path=/api/job/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
         - id: order_route #配置订单服务系统路由
           uri: lb://sparkmall-order
           predicates:
@@ -72,7 +77,7 @@ spring:
         - id: sparkmall_host_route #配置后台管理路由
           uri: lb://sparkmall-product
           predicates:
-            - Host=*.sparkmall.com,sparkmall.com
+            - Host=sparkmall.com
 
 #      globalcors:  路径模糊的放在后面，不然会抢先路由
 #        cors-configurations:

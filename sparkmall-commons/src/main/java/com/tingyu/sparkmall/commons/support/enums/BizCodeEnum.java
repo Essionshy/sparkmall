@@ -11,9 +11,16 @@ public enum BizCodeEnum {
     //异常处理代码
 
 
+    //注册
+    REGISTER_USERNAME_EXISTS(1000,"用户名已存在"),
+    REGISTER_PHONE_EXISTS(1000,"手机号已存在"),
+
+
     //登录
-    LOGIN_SUCCESS(200, "登录成功"),
-    LOGIN_FAIL(201, "登录失败"),
+    LOGIN_USER_NOT_FOUND(200, "用户不存在"),
+    LOGIN_PASSWORD_NOT_MATCHED(201, "密码不匹配"),
+
+
     //验证码
     VERIFYCODE_EXPIRED(201, "验证码已经过期，请重新获取"),
     VERIFYCODE_EROOR(201, "验证码错误"),

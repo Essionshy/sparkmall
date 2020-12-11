@@ -1,32 +1,29 @@
 package com.tingyu.sparkmall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.tingyu.sparkmall.product.entity.SkuEntity;
-import com.tingyu.sparkmall.product.service.SkuService;
+import com.tingyu.sparkmall.commons.dto.product.SkuInfoDTO;
+import com.tingyu.sparkmall.commons.support.CommonResult;
 import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
+import com.tingyu.sparkmall.product.entity.SkuEntity;
+import com.tingyu.sparkmall.product.service.SkuService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
- * sku淇℃伅
+ * sku
  *
  * @author essionshy
  * @email 1218817610@qq.com
  * @date 2020-12-11 16:40:28
  */
 @RestController
-@RequestMapping("product/sku")
+@RequestMapping("/product/sku")
 public class SkuController {
     @Autowired
     private SkuService skuService;
@@ -87,4 +84,15 @@ public class SkuController {
         return R.ok();
     }
 
+    /**
+     * 远程调用
+     */
+
+    @GetMapping("getSkuInfoById/{skuId}")
+    public CommonResult<SkuInfoDTO> getSkuInfoById(@PathVariable("skuId")Long skuId){
+        SkuInfoDTO info = skuService.getSkuInfoById(skuId);
+
+        return CommonResult.success().setData(info);
+
+    }
 }

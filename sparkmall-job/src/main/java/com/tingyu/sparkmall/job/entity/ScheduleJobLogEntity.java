@@ -7,6 +7,7 @@ package com.tingyu.sparkmall.job.entity; /**
  */
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -28,7 +29,7 @@ public class ScheduleJobLogEntity implements Serializable {
     /**
      * 日志id
      */
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Long logId;
 
     /**

@@ -42,10 +42,15 @@ spring:
             groupId: DEFAULT_GROUP
             data-type: json
             rule-type: flow
+  rabbitmq:
+    listener:
+      simple:
+        acknowledge-mode: manual
 #          group: queue-mail
 feign:
   sentinel:
     enabled: true
+
 
 
 management:

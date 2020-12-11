@@ -2,7 +2,7 @@ server:
   port: 19001
 spring:
   application:
-    name: sparkmakl-seckill
+    name: sparkmall-seckill
 
 
   rabbitmq:

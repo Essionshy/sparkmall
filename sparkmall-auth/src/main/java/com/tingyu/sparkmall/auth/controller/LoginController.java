@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
@@ -27,6 +28,7 @@ public class LoginController {
     @Resource
     private LoginService loginService;
 
+    @ResponseBody
     @ApiOperation("发送短信验证码")
     @GetMapping("sms/send/code/{phone}")
     public R sendVerifyCode(@PathVariable("phone") String phone) {
