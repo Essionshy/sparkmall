@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.product.entity.CategoryBrandEntity;
 import java.util.Map;
 
 /**
- * 鍝佺墝鍒嗙被鍏宠仈
+ * 品牌分类关联
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 public interface CategoryBrandService extends IService<CategoryBrandEntity> {
 

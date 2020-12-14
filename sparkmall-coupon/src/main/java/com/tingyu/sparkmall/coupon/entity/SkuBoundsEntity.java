@@ -1,19 +1,19 @@
 package com.tingyu.sparkmall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * 鍟嗗搧spu绉?垎璁剧疆
+ * 商品spu积分设置
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Data
 @TableName("sms_sku_bounds")
@@ -23,22 +23,22 @@ public class SkuBoundsEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * 
 	 */
 	private Long skuId;
 	/**
-	 * 鎴愰暱绉?垎
+	 * 成长积分
 	 */
 	private BigDecimal growBounds;
 	/**
-	 * 璐?墿绉?垎
+	 * 购物积分
 	 */
 	private BigDecimal buyBounds;
 	/**
-	 * 浼樻儬鐢熸晥鎯呭喌[1111锛堝洓涓?姸鎬佷綅锛屼粠鍙冲埌宸︼級;0 - 鏃犱紭鎯狅紝鎴愰暱绉?垎鏄?惁璧犻?;1 - 鏃犱紭鎯狅紝璐?墿绉?垎鏄?惁璧犻?;2 - 鏈変紭鎯狅紝鎴愰暱绉?垎鏄?惁璧犻?;3 - 鏈変紭鎯狅紝璐?墿绉?垎鏄?惁璧犻?銆愮姸鎬佷綅0锛氫笉璧犻?锛?锛氳禒閫併?]
+	 * 优惠生效情况[1111（四个状态位，从右到左）;0 - 无优惠，成长积分是否赠送;1 - 无优惠，购物积分是否赠送;2 - 有优惠，成长积分是否赠送;3 - 有优惠，购物积分是否赠送【状态位0：不赠送，1：赠送】]
 	 */
 	private Integer work;
 

@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.coupon.entity.MemberPriceEntity;
 import java.util.Map;
 
 /**
- * 鍟嗗搧浼氬憳浠锋牸
+ * 商品会员价格
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 public interface MemberPriceService extends IService<MemberPriceEntity> {
 

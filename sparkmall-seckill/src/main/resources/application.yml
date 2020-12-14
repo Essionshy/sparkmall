@@ -13,3 +13,10 @@ spring:
 
   thymeleaf:
     cache: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+  session:
+    store-type: redis

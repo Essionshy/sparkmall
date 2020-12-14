@@ -1,5 +1,6 @@
 package com.tingyu.sparkmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.tingyu.sparkmall.commons.support.AbstractEntity;
@@ -17,7 +18,7 @@ public class CategoryBrandRelationEntity extends AbstractEntity {
     /**
      * ID
      */
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Long id;
     /**
      * 品牌id

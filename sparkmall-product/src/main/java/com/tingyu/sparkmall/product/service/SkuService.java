@@ -8,16 +8,21 @@ import com.tingyu.sparkmall.product.entity.SkuEntity;
 import java.util.Map;
 
 /**
- * sku淇℃伅
+ * sku信息
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 public interface SkuService extends IService<SkuEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * 查询Sku 信息
+     * @param skuId
+     * @return
+     */
     SkuInfoDTO getSkuInfoById(Long skuId);
 }
 

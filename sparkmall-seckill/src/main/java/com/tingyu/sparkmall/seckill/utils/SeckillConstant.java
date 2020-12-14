@@ -8,7 +8,7 @@ package com.tingyu.sparkmall.seckill.utils;
 public final class SeckillConstant {
 
     public final static String SECKILL_SESSION_KEY_PREFIX="seckill:session:";
-    public final static String SECKILL_SKU_KEY_PREFIX="seckill:skus:";
+    public final static String SECKILL_SKU_KEY="seckill:skus"; // hash 保存秒杀场次对就的商品详细信息 key[sessionId_skuId]
 
-    public static final String SECKILL_SKU_STOCK_SEMAPHORE = "seckill:sku:stock:id:";
+    public static final String SECKILL_SKU_STOCK_SEMAPHORE_PREFIX = "seckill:sku:stock:token:"; //秒杀商品数量信号量 key
 }

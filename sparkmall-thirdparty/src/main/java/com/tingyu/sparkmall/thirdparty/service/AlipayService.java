@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.thirdparty.service;
 
-import com.tingyu.sparkmall.commons.dto.OrderDTO;
+import com.tingyu.sparkmall.commons.dto.order.OrderDTO;
 
 /**
  * @Author essionshy

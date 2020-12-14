@@ -14,11 +14,11 @@ import java.util.Map;
 
 
 /**
- * 秒杀商品
+ * 秒杀活动商品关联
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @RestController
 @RequestMapping("coupon/seckillsku")

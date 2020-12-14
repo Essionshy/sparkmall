@@ -27,7 +27,6 @@ public class SkuServiceImpl extends ServiceImpl<SkuDao, SkuEntity> implements Sk
 
         return new PageUtils(page);
     }
-
     @Override
     public SkuInfoDTO getSkuInfoById(Long skuId) {
 
@@ -42,5 +41,4 @@ public class SkuServiceImpl extends ServiceImpl<SkuDao, SkuEntity> implements Sk
 
         return skuInfoDTO;
     }
-
 }

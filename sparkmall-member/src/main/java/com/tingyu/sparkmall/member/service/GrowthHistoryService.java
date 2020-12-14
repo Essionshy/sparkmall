@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.member.entity.GrowthHistoryEntity;
 import java.util.Map;
 
 /**
- * 鎴愰暱绉?垎璁板綍琛
+ * 成长积分记录表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 public interface GrowthHistoryService extends IService<GrowthHistoryEntity> {
 

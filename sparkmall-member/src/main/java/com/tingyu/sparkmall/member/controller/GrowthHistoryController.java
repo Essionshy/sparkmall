@@ -1,29 +1,24 @@
 package com.tingyu.sparkmall.member.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.tingyu.sparkmall.member.entity.GrowthHistoryEntity;
-import com.tingyu.sparkmall.member.service.GrowthHistoryService;
 import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
+import com.tingyu.sparkmall.member.entity.GrowthHistoryEntity;
+import com.tingyu.sparkmall.member.service.GrowthHistoryService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
- * 鎴愰暱绉?垎璁板綍琛
+ * 成长积分记录表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @RestController
 @RequestMapping("member/growthhistory")

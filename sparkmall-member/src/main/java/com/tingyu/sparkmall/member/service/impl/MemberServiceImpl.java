@@ -19,6 +19,7 @@ import com.tingyu.sparkmall.member.service.MemberService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -27,10 +28,8 @@ import java.util.Map;
 @Service("memberService")
 public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> implements MemberService {
 
-
     @Resource
     private MemberLevelService memberLevelService;
-
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -42,6 +41,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
         return new PageUtils(page);
     }
 
+    @Transactional
     @Override
     public void register(MemberRegisterParam param) throws Exception {
 
@@ -53,7 +53,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
 
         //保存会员基本信息到数据库
         MemberEntity memberEntity = new MemberEntity();
-        memberEntity.setUsername(param.getUsername());
+        memberEntity.setMembername(param.getUsername());
         memberEntity.setPhone(param.getPhone());
         //设置会员默认等级
 
@@ -74,7 +74,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
     @Override
     public void validateUsernameUnique(String username) throws UsernameExistsException {
 
-        MemberEntity member = baseMapper.selectOne(new QueryWrapper<MemberEntity>().eq("username", username));
+        MemberEntity member = baseMapper.selectOne(new QueryWrapper<MemberEntity>().eq("membername", username));
 
         if (member != null) {
             throw new UsernameExistsException();
@@ -95,7 +95,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
     public MemberDTO login(MemberLoginParam param) throws Exception {
         String account = param.getAccount();
 
-        MemberEntity memberEntity = baseMapper.selectOne(new QueryWrapper<MemberEntity>().eq("username", account).or()
+        MemberEntity memberEntity = baseMapper.selectOne(new QueryWrapper<MemberEntity>().eq("membername", account).or()
                 .eq("phone", account).or()
                 .eq("email", account));
 
@@ -120,6 +120,4 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
         return memberDTO;
 
     }
-
-
 }

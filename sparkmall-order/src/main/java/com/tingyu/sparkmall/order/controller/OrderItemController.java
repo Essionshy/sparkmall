@@ -1,29 +1,24 @@
 package com.tingyu.sparkmall.order.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.tingyu.sparkmall.order.entity.OrderItemEntity;
-import com.tingyu.sparkmall.order.service.OrderItemService;
 import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
+import com.tingyu.sparkmall.order.entity.OrderItemEntity;
+import com.tingyu.sparkmall.order.service.OrderItemService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
- * 璁㈠崟椤逛俊鎭
+ * 订单项信息
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 @RestController
 @RequestMapping("order/orderitem")

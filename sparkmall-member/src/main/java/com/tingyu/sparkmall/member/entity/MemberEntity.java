@@ -1,5 +1,6 @@
 package com.tingyu.sparkmall.member.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -8,11 +9,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 会员实体类
+ * 用户表
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @Data
 @TableName("ums_member")
@@ -22,22 +23,22 @@ public class MemberEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 会员等级ID
+	 * 会员等级id
 	 */
 	private Long levelId;
 	/**
 	 * 用户名
 	 */
-	private String username;
+	private String membername;
 	/**
 	 * 密码
 	 */
 	private String password;
 	/**
-	 * 盐值
+	 * 盐
 	 */
 	private String salt;
 	/**
@@ -53,11 +54,11 @@ public class MemberEntity implements Serializable {
 	 */
 	private String email;
 	/**
-	 * 澶村儚
+	 * 头像
 	 */
 	private String header;
 	/**
-	 * 年龄
+	 * 性别
 	 */
 	private Integer gender;
 	/**
@@ -73,19 +74,19 @@ public class MemberEntity implements Serializable {
 	 */
 	private String job;
 	/**
-	 *
+	 * 个性签名
 	 */
 	private String sign;
 	/**
-	 * 来源类型
+	 * 来源
 	 */
 	private Integer sourceType;
 	/**
-	 * 璐?墿绉?垎
+	 * 购物积分
 	 */
 	private Integer integration;
 	/**
-	 * 成长值
+	 * 赠送积分
 	 */
 	private Integer growth;
 	/**
@@ -93,7 +94,7 @@ public class MemberEntity implements Serializable {
 	 */
 	private Integer status;
 	/**
-	 * 创建时间
+	 * 注册时间
 	 */
 	private Date createTime;
 

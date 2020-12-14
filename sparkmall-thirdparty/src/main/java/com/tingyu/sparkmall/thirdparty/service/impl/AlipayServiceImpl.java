@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.thirdparty.service.impl;
 
-import com.tingyu.sparkmall.commons.dto.OrderDTO;
+import com.tingyu.sparkmall.commons.dto.order.OrderDTO;
 import com.tingyu.sparkmall.thirdparty.properties.AlipayProperties;
 import com.tingyu.sparkmall.thirdparty.service.AlipayService;
 import com.tingyu.sparkmall.thirdparty.utils.AlipayUtil;

@@ -17,7 +17,7 @@ import lombok.Data;
 @TableName("tbl_member_level_rights_relation")
 public class MemberLevelRightsRelationEntity extends AbstractEntity {
 
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     private Integer levelId;

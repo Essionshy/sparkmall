@@ -19,11 +19,11 @@ import com.tingyu.sparkmall.commons.utils.R;
 
 
 /**
- * 鍟嗗搧婊″噺淇℃伅
+ * 商品满减信息
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @RestController
 @RequestMapping("coupon/skufullreduction")

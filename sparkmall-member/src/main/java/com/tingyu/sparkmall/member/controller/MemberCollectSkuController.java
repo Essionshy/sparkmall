@@ -1,27 +1,32 @@
 package com.tingyu.sparkmall.member.controller;
 
-import com.tingyu.sparkmall.commons.utils.PageUtils;
-import com.tingyu.sparkmall.commons.utils.R;
-import com.tingyu.sparkmall.member.entity.MemberCollectSkuEntity;
-import com.tingyu.sparkmall.member.service.MemberCollectSkuService;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tingyu.sparkmall.member.entity.MemberCollectSkuEntity;
+import com.tingyu.sparkmall.member.service.MemberCollectSkuService;
+import com.tingyu.sparkmall.commons.utils.PageUtils;
+import com.tingyu.sparkmall.commons.utils.R;
 
 
 
 /**
- * 会员关注商品控制器类
+ * 关注商品表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @RestController
-@RequestMapping("member/collectsuk")
+@RequestMapping("member/membercollectsku")
 public class MemberCollectSkuController {
     @Autowired
     private MemberCollectSkuService memberCollectSkuService;
@@ -30,7 +35,7 @@ public class MemberCollectSkuController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("member:collectsuk:list")
+    @RequiresPermissions("member:membercollectsku:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberCollectSkuService.queryPage(params);
 
@@ -42,7 +47,7 @@ public class MemberCollectSkuController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("member:collectsku:info")
+    @RequiresPermissions("member:membercollectsku:info")
     public R info(@PathVariable("id") Long id){
 		MemberCollectSkuEntity memberCollectSku = memberCollectSkuService.getById(id);
 
@@ -53,7 +58,7 @@ public class MemberCollectSkuController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("member:collectsku:save")
+    @RequiresPermissions("member:membercollectsku:save")
     public R save(@RequestBody MemberCollectSkuEntity memberCollectSku){
 		memberCollectSkuService.save(memberCollectSku);
 
@@ -64,7 +69,7 @@ public class MemberCollectSkuController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("member:collectsku:update")
+    @RequiresPermissions("member:membercollectsku:update")
     public R update(@RequestBody MemberCollectSkuEntity memberCollectSku){
 		memberCollectSkuService.updateById(memberCollectSku);
 
@@ -75,7 +80,7 @@ public class MemberCollectSkuController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("member:collectsku:delete")
+    @RequiresPermissions("member:membercollectsku:delete")
     public R delete(@RequestBody Long[] ids){
 		memberCollectSkuService.removeByIds(Arrays.asList(ids));
 

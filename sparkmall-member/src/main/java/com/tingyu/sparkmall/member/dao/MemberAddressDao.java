@@ -5,11 +5,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 鏀惰揣鍦板潃琛
+ * 收货地址表
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @Mapper
 public interface MemberAddressDao extends BaseMapper<MemberAddressEntity> {

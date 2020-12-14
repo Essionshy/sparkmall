@@ -1,18 +1,19 @@
 package com.tingyu.sparkmall.member.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 鎴愰暱绉?垎璁板綍琛
+ * 成长积分记录表
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @Data
 @TableName("ums_growth_history")
@@ -22,26 +23,26 @@ public class GrowthHistoryEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 鐢ㄦ埛id
+	 * 用户id
 	 */
 	private Long memberId;
 	/**
-	 * 鍒涘缓鏃堕棿
+	 * 创建时间
 	 */
 	private Date createTime;
 	/**
-	 * 鍙樺姩鏁伴噺
+	 * 变动数量
 	 */
 	private Integer count;
 	/**
-	 * 澶囨敞
+	 * 备注
 	 */
 	private String remark;
 	/**
-	 * 鏉ユ簮
+	 * 来源
 	 */
 	private Integer sourceType;
 

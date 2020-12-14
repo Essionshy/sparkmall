@@ -30,7 +30,6 @@ public class SeckillSessionServiceImpl extends ServiceImpl<SeckillSessionDao, Se
     @Resource
     private SeckillSkuService seckillSkuService;
 
-
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<SeckillSessionEntity> page = this.page(

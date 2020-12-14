@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.member.entity.MemberCollectShopEntity;
 import java.util.Map;
 
 /**
- * 鍏虫敞搴楅摵琛
+ * 关注店铺表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 public interface MemberCollectShopService extends IService<MemberCollectShopEntity> {
 

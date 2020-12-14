@@ -30,7 +30,7 @@
         <module>sparkmall-cart</module>
         <module>sparkmall-pay</module>
         <module>sparkmall-search</module>
-        <module>sparkmall-msg</module>
+        <module>sparkmall-message</module>
         <module>sparkmall-auth</module>
         <module>sparkmall-seckill</module>
 

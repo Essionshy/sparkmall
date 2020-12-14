@@ -16,20 +16,31 @@ spring:
           enabled: true
 
       routes:
-        - id: member_route #配置会员服务路由
+        - id: member_host_route #配置会员服务路由
           uri: lb://sparkmall-member
           predicates:
             - Host=member.sparkmall.com
+        - id: member_path_route #配置商品系统路由
+          uri: lb://sparkmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
 
         - id: auth_route #配置认证服务路由
           uri: lb://sparkmall-auth
           predicates:
             - Host=auth.sparkmall.com
-        - id: product_route #配置商品服务路由
+        - id: produc_host_route #配置商品服务路由
           uri: lb://sparkmall-product
           predicates:
-            - Host=sparkmall.com
-
+            - Host=item.sparkmall.com
+        - id: product_path_route #配置商品系统路由
+          uri: lb://sparkmall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
         - id: lottery_route #配置抽奖系统路由
           uri: lb://sparkmall-lottery
           predicates:
@@ -64,6 +75,12 @@ spring:
             - Path=/api/ware/**
           filters:
             - RewritePath=/api(?<segment>/?.*), /$\{segment}
+        - id: coupon_route #配置优惠服务系统路由
+          uri: lb://sparkmall-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
         - id: admin_route #配置后台管理路由
           uri: lb://sparkmall-admin
           predicates:
@@ -74,7 +91,11 @@ spring:
           uri: lb://sparkmall-third-party
           predicates:
             - Host=third.sparkmall.com
-        - id: sparkmall_host_route #配置后台管理路由
+        - id: seckill_host_route #配置秒杀服务路由
+          uri: lb://sparkmall-seckill
+          predicates:
+            - Host=seckill.sparkmall.com
+        - id: sparkmall_host_route #配置
           uri: lb://sparkmall-product
           predicates:
             - Host=sparkmall.com

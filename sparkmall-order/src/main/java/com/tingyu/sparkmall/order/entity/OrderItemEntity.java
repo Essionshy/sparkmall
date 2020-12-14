@@ -1,5 +1,6 @@
 package com.tingyu.sparkmall.order.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -8,11 +9,11 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * 璁㈠崟椤逛俊鎭
+ * 订单项信息
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 @Data
 @TableName("oms_order_item")
@@ -22,7 +23,7 @@ public class OrderItemEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * order_id
@@ -45,59 +46,59 @@ public class OrderItemEntity implements Serializable {
 	 */
 	private String spuPic;
 	/**
-	 * 鍝佺墝
+	 * 品牌
 	 */
 	private String spuBrand;
 	/**
-	 * 鍟嗗搧鍒嗙被id
+	 * 商品分类id
 	 */
 	private Long categoryId;
 	/**
-	 * 鍟嗗搧sku缂栧彿
+	 * 商品sku编号
 	 */
 	private Long skuId;
 	/**
-	 * 鍟嗗搧sku鍚嶅瓧
+	 * 商品sku名字
 	 */
 	private String skuName;
 	/**
-	 * 鍟嗗搧sku鍥剧墖
+	 * 商品sku图片
 	 */
 	private String skuPic;
 	/**
-	 * 鍟嗗搧sku浠锋牸
+	 * 商品sku价格
 	 */
 	private BigDecimal skuPrice;
 	/**
-	 * 鍟嗗搧璐?拱鐨勬暟閲
+	 * 商品购买的数量
 	 */
 	private Integer skuQuantity;
 	/**
-	 * 鍟嗗搧閿?敭灞炴?缁勫悎锛圝SON锛
+	 * 商品销售属性组合（JSON）
 	 */
 	private String skuAttrsVals;
 	/**
-	 * 鍟嗗搧淇冮攢鍒嗚В閲戦?
+	 * 商品促销分解金额
 	 */
 	private BigDecimal promotionAmount;
 	/**
-	 * 浼樻儬鍒镐紭鎯犲垎瑙ｉ噾棰
+	 * 优惠券优惠分解金额
 	 */
 	private BigDecimal couponAmount;
 	/**
-	 * 绉?垎浼樻儬鍒嗚В閲戦?
+	 * 积分优惠分解金额
 	 */
 	private BigDecimal integrationAmount;
 	/**
-	 * 璇ュ晢鍝佺粡杩囦紭鎯犲悗鐨勫垎瑙ｉ噾棰
+	 * 该商品经过优惠后的分解金额
 	 */
 	private BigDecimal realAmount;
 	/**
-	 * 璧犻?绉?垎
+	 * 赠送积分
 	 */
 	private Integer giftIntegration;
 	/**
-	 * 璧犻?鎴愰暱鍊
+	 * 赠送成长值
 	 */
 	private Integer giftGrowth;
 

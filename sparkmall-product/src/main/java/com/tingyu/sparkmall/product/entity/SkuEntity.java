@@ -1,19 +1,19 @@
 package com.tingyu.sparkmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * sku淇℃伅
+ * sku信息
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @Data
 @TableName("pms_sku")
@@ -23,42 +23,42 @@ public class SkuEntity implements Serializable {
 	/**
 	 * skuId
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * spuId
 	 */
 	private Long spuId;
 	/**
-	 * sku鍚嶇О
+	 * sku名称
 	 */
 	private String name;
 	/**
-	 * 鎵?睘鍒嗙被id
+	 * 所属分类id
 	 */
 	private Long catagoryId;
 	/**
-	 * 鍝佺墝id
+	 * 品牌id
 	 */
 	private Long brandId;
 	/**
-	 * 榛樿?鍥剧墖
+	 * 默认图片
 	 */
 	private String defaultImage;
 	/**
-	 * 鏍囬?
+	 * 标题
 	 */
 	private String title;
 	/**
-	 * 鍓?爣棰
+	 * 副标题
 	 */
 	private String subtitle;
 	/**
-	 * 浠锋牸
+	 * 价格
 	 */
 	private BigDecimal price;
 	/**
-	 * 閲嶉噺锛堝厠锛
+	 * 重量（克）
 	 */
 	private Integer weight;
 

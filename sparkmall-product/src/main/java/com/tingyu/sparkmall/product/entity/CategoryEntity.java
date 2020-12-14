@@ -1,32 +1,52 @@
 package com.tingyu.sparkmall.product.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.util.Date;
+import java.io.Serializable;
 
 /**
- * @Author essionshy
- * @Create 2020/11/29 11:15
- * @Version renren-fast
+ * 商品三级分类
+ * 
+ * @author essionshy
+ * @email 1218817610@qq.com
+ * @date 2020-12-13 14:23:41
  */
 @Data
-@TableName(value = "tbl_product_category")
-public class CategoryEntity {
+@TableName("pms_category")
+public class CategoryEntity implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-    @TableId(type = IdType.ASSIGN_ID)
-    private Long id; //商品类别ID
-
-    private String name; //商品类别名称
-
-    @TableField(fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date gmtCreate;
-
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date gmtModified;
-
+	/**
+	 * 分类id
+	 */
+	@TableId(type = IdType.AUTO)
+	private Long id;
+	/**
+	 * 分类名称
+	 */
+	private String name;
+	/**
+	 * 父分类id
+	 */
+	private Long parentId;
+	/**
+	 * 是否显示[0-不显示，1显示]
+	 */
+	private Integer status;
+	/**
+	 * 排序
+	 */
+	private Integer sort;
+	/**
+	 * 图标地址
+	 */
+	private String icon;
+	/**
+	 * 计量单位
+	 */
+	private String unit;
 
 }

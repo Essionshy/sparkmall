@@ -168,7 +168,8 @@ public class LoginServiceImpl implements LoginService {
             //登录成功跳转首页
             log.info("登录成功");
             //将用户信息保存到session中
-            session.setAttribute("loginUser", loginUser);
+
+            session.setAttribute(AuthServerConstant.LOGINED_USER_INFO, loginUser);
 
             return "redirect:http://sparkmall.com";
         }

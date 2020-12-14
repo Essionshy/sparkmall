@@ -1,19 +1,19 @@
 package com.tingyu.sparkmall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * 鍟嗗搧浼氬憳浠锋牸
+ * 商品会员价格
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Data
 @TableName("sms_member_price")
@@ -23,26 +23,26 @@ public class MemberPriceEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * sku_id
 	 */
 	private Long skuId;
 	/**
-	 * 浼氬憳绛夌骇id
+	 * 会员等级id
 	 */
 	private Long memberLevelId;
 	/**
-	 * 浼氬憳绛夌骇鍚
+	 * 会员等级名
 	 */
 	private String memberLevelName;
 	/**
-	 * 浼氬憳瀵瑰簲浠锋牸
+	 * 会员对应价格
 	 */
 	private BigDecimal memberPrice;
 	/**
-	 * 鍙?惁鍙犲姞鍏朵粬浼樻儬[0-涓嶅彲鍙犲姞浼樻儬锛?-鍙?彔鍔燷
+	 * 可否叠加其他优惠[0-不可叠加优惠，1-可叠加]
 	 */
 	private Integer addOther;
 

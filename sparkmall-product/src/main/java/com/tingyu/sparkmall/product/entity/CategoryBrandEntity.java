@@ -1,18 +1,18 @@
 package com.tingyu.sparkmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * 鍝佺墝鍒嗙被鍏宠仈
+ * 品牌分类关联
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @Data
 @TableName("pms_category_brand")
@@ -22,22 +22,22 @@ public class CategoryBrandEntity implements Serializable {
 	/**
 	 * 
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 鍝佺墝id
+	 * 品牌id
 	 */
 	private Long brandId;
 	/**
-	 * 鍒嗙被id
+	 * 分类id
 	 */
 	private Long categoryId;
 	/**
-	 * 鍝佺墝鍚嶇О
+	 * 品牌名称
 	 */
 	private String brandName;
 	/**
-	 * 鍒嗙被鍚嶇О
+	 * 分类名称
 	 */
 	private String categoryName;
 

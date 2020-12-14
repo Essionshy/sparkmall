@@ -5,11 +5,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * sku閿?敭灞炴?&鍊
+ * sku销售属性&值
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @Mapper
 public interface SkuAttrValueDao extends BaseMapper<SkuAttrValueEntity> {

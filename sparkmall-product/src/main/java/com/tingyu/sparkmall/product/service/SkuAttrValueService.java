@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.product.entity.SkuAttrValueEntity;
 import java.util.Map;
 
 /**
- * sku閿?敭灞炴?&鍊
+ * sku销售属性&值
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 public interface SkuAttrValueService extends IService<SkuAttrValueEntity> {
 

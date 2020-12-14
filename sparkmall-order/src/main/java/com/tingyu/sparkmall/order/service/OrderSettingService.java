@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.order.entity.OrderSettingEntity;
 import java.util.Map;
 
 /**
- * 璁㈠崟閰嶇疆淇℃伅
+ * 订单配置信息
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 public interface OrderSettingService extends IService<OrderSettingEntity> {
 

@@ -1,18 +1,19 @@
 package com.tingyu.sparkmall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 绉掓潃鍟嗗搧閫氱煡璁㈤槄
+ * 秒杀商品通知订阅
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Data
 @TableName("sms_seckill_sku_notice")
@@ -22,7 +23,7 @@ public class SeckillSkuNoticeEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * member_id
@@ -33,19 +34,19 @@ public class SeckillSkuNoticeEntity implements Serializable {
 	 */
 	private Long skuId;
 	/**
-	 * 娲诲姩鍦烘?id
+	 * 活动场次id
 	 */
 	private Long sessionId;
 	/**
-	 * 璁㈤槄鏃堕棿
+	 * 订阅时间
 	 */
 	private Date subcribeTime;
 	/**
-	 * 鍙戦?鏃堕棿
+	 * 发送时间
 	 */
 	private Date sendTime;
 	/**
-	 * 閫氱煡鏂瑰紡[0-鐭?俊锛?-閭?欢]
+	 * 通知方式[0-短信，1-邮件]
 	 */
 	private Integer noticeType;
 

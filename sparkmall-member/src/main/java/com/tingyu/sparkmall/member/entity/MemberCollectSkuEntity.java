@@ -1,18 +1,19 @@
 package com.tingyu.sparkmall.member.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 鍏虫敞鍟嗗搧琛
+ * 关注商品表
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @Data
 @TableName("ums_member_collect_sku")
@@ -22,10 +23,10 @@ public class MemberCollectSkuEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 鐢ㄦ埛id
+	 * 用户id
 	 */
 	private Long memberId;
 	/**
@@ -33,15 +34,15 @@ public class MemberCollectSkuEntity implements Serializable {
 	 */
 	private Long skuId;
 	/**
-	 * sku鏍囬?
+	 * sku标题
 	 */
 	private String skuTitle;
 	/**
-	 * sku榛樿?鍥剧墖
+	 * sku默认图片
 	 */
 	private String skuImage;
 	/**
-	 * 鍒涘缓鏃堕棿
+	 * 创建时间
 	 */
 	private Date createTime;
 

@@ -35,11 +35,11 @@ public class SeckillSkuServiceImpl extends ServiceImpl<SeckillSkuDao, SeckillSku
 
         List<SeckillSkuEntity> skuEntities = baseMapper.selectList(new QueryWrapper<SeckillSkuEntity>().eq("promotion_session_id", id));
 
-        if(skuEntities!=null && skuEntities.size()>0){
+        if (skuEntities != null && skuEntities.size() > 0) {
 
             List<SeckillSkuDTO> collect = skuEntities.stream().map(seckillSkuEntity -> {
                 SeckillSkuDTO seckillSkuDTO = new SeckillSkuDTO();
-                BeanUtils.copyProperties(seckillSkuEntity,seckillSkuEntity);
+                BeanUtils.copyProperties(seckillSkuEntity, seckillSkuDTO);
                 return seckillSkuDTO;
             }).collect(Collectors.toList());
 
@@ -49,5 +49,4 @@ public class SeckillSkuServiceImpl extends ServiceImpl<SeckillSkuDao, SeckillSku
 
         return null;
     }
-
 }

@@ -16,6 +16,9 @@ spring:
     cache: false # 开发阶段关闭 缓存功能，以全能够实时刷新修改后的页面数据
   profiles:
     active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 redisson:
   single:
     node: redis://192.168.0.103:6379

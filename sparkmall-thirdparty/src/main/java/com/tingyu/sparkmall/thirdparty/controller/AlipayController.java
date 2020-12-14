@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.thirdparty.controller;
 
-import com.tingyu.sparkmall.commons.dto.OrderDTO;
+import com.tingyu.sparkmall.commons.dto.order.OrderDTO;
 import com.tingyu.sparkmall.thirdparty.service.AlipayService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

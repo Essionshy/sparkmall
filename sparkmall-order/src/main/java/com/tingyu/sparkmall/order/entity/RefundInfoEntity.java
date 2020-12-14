@@ -1,19 +1,19 @@
 package com.tingyu.sparkmall.order.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * 閫??淇℃伅
+ * 退款信息
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 @Data
 @TableName("oms_refund_info")
@@ -23,26 +23,26 @@ public class RefundInfoEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 閫??鐨勮?鍗
+	 * 退款的订单
 	 */
 	private Long orderReturnId;
 	/**
-	 * 閫??閲戦?
+	 * 退款金额
 	 */
 	private BigDecimal refund;
 	/**
-	 * 閫??浜ゆ槗娴佹按鍙
+	 * 退款交易流水号
 	 */
 	private String refundSn;
 	/**
-	 * 閫??鐘舵?
+	 * 退款状态
 	 */
 	private Integer refundStatus;
 	/**
-	 * 閫??娓犻亾[1-鏀?粯瀹濓紝2-寰?俊锛?-閾惰仈锛?-姹囨?]
+	 * 退款渠道[1-支付宝，2-微信，3-银联，4-汇款]
 	 */
 	private Integer refundChannel;
 	/**

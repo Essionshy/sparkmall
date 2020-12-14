@@ -1,18 +1,18 @@
 package com.tingyu.sparkmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * spu灞炴?鍊
+ * spu属性值
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @Data
 @TableName("pms_spu_attr_value")
@@ -22,26 +22,26 @@ public class SpuAttrValueEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 鍟嗗搧id
+	 * 商品id
 	 */
 	private Long spuId;
 	/**
-	 * 灞炴?id
+	 * 属性id
 	 */
 	private Long attrId;
 	/**
-	 * 灞炴?鍚
+	 * 属性名
 	 */
 	private String attrName;
 	/**
-	 * 灞炴?鍊
+	 * 属性值
 	 */
 	private String attrValue;
 	/**
-	 * 椤哄簭
+	 * 顺序
 	 */
 	private Integer sort;
 

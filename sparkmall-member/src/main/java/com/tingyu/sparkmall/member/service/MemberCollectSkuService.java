@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.member.entity.MemberCollectSkuEntity;
 import java.util.Map;
 
 /**
- * 鍏虫敞鍟嗗搧琛
+ * 关注商品表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 public interface MemberCollectSkuService extends IService<MemberCollectSkuEntity> {
 

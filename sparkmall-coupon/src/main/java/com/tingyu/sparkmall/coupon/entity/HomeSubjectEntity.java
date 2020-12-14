@@ -1,18 +1,18 @@
 package com.tingyu.sparkmall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * 棣栭〉涓撻?琛ㄣ?jd棣栭〉涓嬮潰寰堝?涓撻?锛屾瘡涓?笓棰橀摼鎺ユ柊鐨勯〉闈?紝灞曠ず涓撻?鍟嗗搧淇℃伅銆
+ * 首页专题表【jd首页下面很多专题，每个专题链接新的页面，展示专题商品信息】
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Data
 @TableName("sms_home_subject")
@@ -22,34 +22,34 @@ public class HomeSubjectEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 涓撻?鍚嶅瓧
+	 * 专题名字
 	 */
 	private String name;
 	/**
-	 * 涓撻?鏍囬?
+	 * 专题标题
 	 */
 	private String title;
 	/**
-	 * 涓撻?鍓?爣棰
+	 * 专题副标题
 	 */
 	private String subTitle;
 	/**
-	 * 鏄剧ず鐘舵?
+	 * 显示状态
 	 */
 	private Integer status;
 	/**
-	 * 璇︽儏杩炴帴
+	 * 详情连接
 	 */
 	private String url;
 	/**
-	 * 鎺掑簭
+	 * 排序
 	 */
 	private Integer sort;
 	/**
-	 * 涓撻?鍥剧墖鍦板潃
+	 * 专题图片地址
 	 */
 	private String img;
 

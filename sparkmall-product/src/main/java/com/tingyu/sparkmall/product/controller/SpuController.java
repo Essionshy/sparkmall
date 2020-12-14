@@ -19,11 +19,11 @@ import com.tingyu.sparkmall.commons.utils.R;
 
 
 /**
- * spu淇℃伅
+ * spu信息
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @RestController
 @RequestMapping("product/spu")

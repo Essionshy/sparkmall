@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  */
 @Data
 public class SkuInfoDTO {
-    private Long skuId;
+    private Long id;
     /**
      * spuId
      */
@@ -19,15 +19,11 @@ public class SkuInfoDTO {
     /**
      * sku名称
      */
-    private String skuName;
-    /**
-     * sku介绍描述
-     */
-    private String skuDesc;
+    private String name;
     /**
      * 所属分类id
      */
-    private Long catalogId;
+    private Long catagoryId;
     /**
      * 品牌id
      */
@@ -35,21 +31,21 @@ public class SkuInfoDTO {
     /**
      * 默认图片
      */
-    private String skuDefaultImg;
+    private String defaultImage;
     /**
      * 标题
      */
-    private String skuTitle;
+    private String title;
     /**
      * 副标题
      */
-    private String skuSubtitle;
+    private String subtitle;
     /**
      * 价格
      */
     private BigDecimal price;
     /**
-     * 销量
+     * 重量（克）
      */
-    private Long saleCount;
+    private Integer weight;
 }

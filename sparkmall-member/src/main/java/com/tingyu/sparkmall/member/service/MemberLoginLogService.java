@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.member.entity.MemberLoginLogEntity;
 import java.util.Map;
 
 /**
- * 鐢ㄦ埛鐧婚檰璁板綍琛
+ * 用户登陆记录表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 public interface MemberLoginLogService extends IService<MemberLoginLogEntity> {
 

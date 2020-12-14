@@ -14,11 +14,11 @@ import java.util.Map;
 
 
 /**
- * 会员等级控制器
+ * 会员等级表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @RestController
 @RequestMapping("member/level")
@@ -30,7 +30,7 @@ public class MemberLevelController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("member:level:list")
+    @RequiresPermissions("member:memberlevel:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberLevelService.queryPage(params);
 
@@ -42,7 +42,7 @@ public class MemberLevelController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("member:level:info")
+    @RequiresPermissions("member:memberlevel:info")
     public R info(@PathVariable("id") Long id){
 		MemberLevelEntity memberLevel = memberLevelService.getById(id);
 
@@ -53,7 +53,7 @@ public class MemberLevelController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("member:level:save")
+    @RequiresPermissions("member:memberlevel:save")
     public R save(@RequestBody MemberLevelEntity memberLevel){
 		memberLevelService.save(memberLevel);
 
@@ -64,7 +64,7 @@ public class MemberLevelController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("member:level:update")
+    @RequiresPermissions("member:memberlevel:update")
     public R update(@RequestBody MemberLevelEntity memberLevel){
 		memberLevelService.updateById(memberLevel);
 
@@ -75,7 +75,7 @@ public class MemberLevelController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("member:level:delete")
+    @RequiresPermissions("member:memberlevel:delete")
     public R delete(@RequestBody Long[] ids){
 		memberLevelService.removeByIds(Arrays.asList(ids));
 

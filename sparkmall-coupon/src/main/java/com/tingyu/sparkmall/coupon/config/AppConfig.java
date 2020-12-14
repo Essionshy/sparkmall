@@ -1,7 +1,7 @@
 package com.tingyu.sparkmall.coupon.config;
 
+import com.tingyu.sparkmall.commons.handler.CustomMetaObjectHandler;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -15,7 +15,7 @@ import javax.sql.DataSource;
  * @Version renren-fast
  */
 @Configuration
-@ComponentScan("com.tingyu.sparkmall")
+//@ComponentScan("com.tingyu.sparkmall")
 @EnableTransactionManagement
 public class AppConfig {
 
@@ -30,6 +30,16 @@ public class AppConfig {
     public PlatformTransactionManager dataSourceTransactionManager(DataSource dataSource) {
 
         return new DataSourceTransactionManager(dataSource);
+    }
+
+    /**
+     * 配置 Mybatis-Plus自动填充
+     * @return
+     */
+    @Bean
+    public CustomMetaObjectHandler customMetaObjectHandler(){
+
+        return new CustomMetaObjectHandler();
     }
 
 

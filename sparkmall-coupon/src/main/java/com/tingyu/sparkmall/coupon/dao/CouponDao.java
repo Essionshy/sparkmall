@@ -1,14 +1,17 @@
 package com.tingyu.sparkmall.coupon.dao;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.tingyu.sparkmall.coupon.entity.CouponEntity;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @Author essionshy
- * @Create 2020/12/5 11:58
- * @Version renren-fast
+ * 优惠券信息
+ * 
+ * @author essionshy
+ * @email 1218817610@qq.com
+ * @date 2020-12-13 14:21:15
  */
 @Mapper
 public interface CouponDao extends BaseMapper<CouponEntity> {
+	
 }

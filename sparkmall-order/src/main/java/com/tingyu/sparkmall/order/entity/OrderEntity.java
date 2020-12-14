@@ -1,193 +1,194 @@
 package com.tingyu.sparkmall.order.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
 /**
- * 璁㈠崟
- * 
+ * 订单
+ *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 @Data
 @TableName("oms_order")
 public class OrderEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * id
-	 */
-	@TableId
-	private Long id;
-	/**
-	 * member_id
-	 */
-	private Long memberId;
-	/**
-	 * 璁㈠崟鍙
-	 */
-	private String orderNo;
-	/**
-	 * 浣跨敤鐨勪紭鎯犲埜
-	 */
-	private Long couponId;
-	/**
-	 * 鍒涘缓鏃堕棿
-	 */
-	private Date createTime;
-	/**
-	 * 鐢ㄦ埛鍚
-	 */
-	private String username;
-	/**
-	 * 璁㈠崟鎬婚?
-	 */
-	private BigDecimal totalAmount;
-	/**
-	 * 搴斾粯鎬婚?
-	 */
-	private BigDecimal payAmount;
-	/**
-	 * 杩愯垂閲戦?
-	 */
-	private BigDecimal freightAmount;
-	/**
-	 * 淇冮攢浼樺寲閲戦?锛堜績閿?环銆佹弧鍑忋?闃舵?浠凤級
-	 */
-	private BigDecimal promotionAmount;
-	/**
-	 * 绉?垎鎶垫墸閲戦?
-	 */
-	private BigDecimal integrationAmount;
-	/**
-	 * 浼樻儬鍒告姷鎵ｉ噾棰
-	 */
-	private BigDecimal couponAmount;
-	/**
-	 * 鍚庡彴璋冩暣璁㈠崟浣跨敤鐨勬姌鎵ｉ噾棰
-	 */
-	private BigDecimal discountAmount;
-	/**
-	 * 鏀?粯鏂瑰紡銆?->鏀?粯瀹濓紱2->寰?俊锛?->閾惰仈锛?4->璐у埌浠樻?锛涖?
-	 */
-	private Integer payType;
-	/**
-	 * 璁㈠崟鏉ユ簮[0->PC璁㈠崟锛?->app璁㈠崟]
-	 */
-	private Integer sourceType;
-	/**
-	 * 璁㈠崟鐘舵?銆?->寰呬粯娆撅紱1->寰呭彂璐э紱2->宸插彂璐э紱3->宸插畬鎴愶紱4->宸插叧闂?紱5->鏃犳晥璁㈠崟銆
-	 */
-	private Integer status;
-	/**
-	 * 鐗╂祦鍏?徃(閰嶉?鏂瑰紡)
-	 */
-	private String deliveryCompany;
-	/**
-	 * 鐗╂祦鍗曞彿
-	 */
-	private String deliverySn;
-	/**
-	 * 鑷?姩纭??鏃堕棿锛堝ぉ锛
-	 */
-	private Integer autoConfirmDay;
-	/**
-	 * 鍙?互鑾峰緱鐨勭Н鍒
-	 */
-	private Integer integration;
-	/**
-	 * 鍙?互鑾峰緱鐨勬垚闀垮?
-	 */
-	private Integer growth;
-	/**
-	 * 鍙戠エ绫诲瀷[0->涓嶅紑鍙戠エ锛?->鐢靛瓙鍙戠エ锛?->绾歌川鍙戠エ]
-	 */
-	private Integer billType;
-	/**
-	 * 鍙戠エ鎶?ご
-	 */
-	private String billHeader;
-	/**
-	 * 鍙戠エ鍐呭?
-	 */
-	private String billContent;
-	/**
-	 * 鏀剁エ浜虹數璇
-	 */
-	private String billReceiverPhone;
-	/**
-	 * 鏀剁エ浜洪偖绠
-	 */
-	private String billReceiverEmail;
-	/**
-	 * 鏀惰揣浜哄?鍚
-	 */
-	private String receiverName;
-	/**
-	 * 鏀惰揣浜虹數璇
-	 */
-	private String receiverPhone;
-	/**
-	 * 鏀惰揣浜洪偖缂
-	 */
-	private String receiverPostCode;
-	/**
-	 * 鐪佷唤/鐩磋緰甯
-	 */
-	private String receiverProvince;
-	/**
-	 * 鍩庡競
-	 */
-	private String receiverCity;
-	/**
-	 * 鍖
-	 */
-	private String receiverRegion;
-	/**
-	 * 璇︾粏鍦板潃
-	 */
-	private String receiverAddress;
-	/**
-	 * 纭??鏀惰揣鐘舵?[0->鏈?‘璁わ紱1->宸茬‘璁?
-	 */
-	private Integer confirmStatus;
-	/**
-	 * 鍒犻櫎鐘舵?銆?->鏈?垹闄わ紱1->宸插垹闄ゃ?
-	 */
-	private Integer deleted;
-	/**
-	 * 涓嬪崟鏃朵娇鐢ㄧ殑绉?垎
-	 */
-	private Integer useIntegration;
-	/**
-	 * 鏀?粯鏃堕棿
-	 */
-	private Date paymentTime;
-	/**
-	 * 鍙戣揣鏃堕棿
-	 */
-	private Date deliveryTime;
-	/**
-	 * 纭??鏀惰揣鏃堕棿
-	 */
-	private Date receiveTime;
-	/**
-	 * 璇勪环鏃堕棿
-	 */
-	private Date commentTime;
-	/**
-	 * 淇?敼鏃堕棿
-	 */
-	private Date modifyTime;
-	/**
-	 * 璁㈠崟澶囨敞
-	 */
-	private String remark;
+    /**
+     * id
+     */
+    @TableId(type = IdType.AUTO)
+    private Long id;
+    /**
+     * member_id
+     */
+    private Long memberId;
+    /**
+     * 订单号
+     */
+    private String orderNo;
+    /**
+     * 使用的优惠券
+     */
+    private Long couponId;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+    /**
+     * 用户名
+     */
+    private String username;
+    /**
+     * 订单总额
+     */
+    private BigDecimal totalAmount;
+    /**
+     * 应付总额
+     */
+    private BigDecimal payAmount;
+    /**
+     * 运费金额
+     */
+    private BigDecimal freightAmount;
+    /**
+     * 促销优化金额（促销价、满减、阶梯价）
+     */
+    private BigDecimal promotionAmount;
+    /**
+     * 积分抵扣金额
+     */
+    private BigDecimal integrationAmount;
+    /**
+     * 优惠券抵扣金额
+     */
+    private BigDecimal couponAmount;
+    /**
+     * 后台调整订单使用的折扣金额
+     */
+    private BigDecimal discountAmount;
+    /**
+     * 支付方式【1->支付宝；2->微信；3->银联； 4->货到付款；】
+     */
+    private Integer payType;
+    /**
+     * 订单来源[0->PC订单；1->app订单]
+     */
+    private Integer sourceType;
+    /**
+     * 订单状态【0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单】
+     */
+    private Integer status;
+    /**
+     * 物流公司(配送方式)
+     */
+    private String deliveryCompany;
+    /**
+     * 物流单号
+     */
+    private String deliverySn;
+    /**
+     * 自动确认时间（天）
+     */
+    private Integer autoConfirmDay;
+    /**
+     * 可以获得的积分
+     */
+    private Integer integration;
+    /**
+     * 可以获得的成长值
+     */
+    private Integer growth;
+    /**
+     * 发票类型[0->不开发票；1->电子发票；2->纸质发票]
+     */
+    private Integer billType;
+    /**
+     * 发票抬头
+     */
+    private String billHeader;
+    /**
+     * 发票内容
+     */
+    private String billContent;
+    /**
+     * 收票人电话
+     */
+    private String billReceiverPhone;
+    /**
+     * 收票人邮箱
+     */
+    private String billReceiverEmail;
+    /**
+     * 收货人姓名
+     */
+    private String receiverName;
+    /**
+     * 收货人电话
+     */
+    private String receiverPhone;
+    /**
+     * 收货人邮编
+     */
+    private String receiverPostCode;
+    /**
+     * 省份/直辖市
+     */
+    private String receiverProvince;
+    /**
+     * 城市
+     */
+    private String receiverCity;
+    /**
+     * 区
+     */
+    private String receiverRegion;
+    /**
+     * 详细地址
+     */
+    private String receiverAddress;
+    /**
+     * 确认收货状态[0->未确认；1->已确认]
+     */
+    private Integer confirmStatus;
+    /**
+     * 删除状态【0->未删除；1->已删除】
+     */
+    private Integer deleted;
+    /**
+     * 下单时使用的积分
+     */
+    private Integer useIntegration;
+    /**
+     * 支付时间
+     */
+    private Date paymentTime;
+    /**
+     * 发货时间
+     */
+    private Date deliveryTime;
+    /**
+     * 确认收货时间
+     */
+    private Date receiveTime;
+    /**
+     * 评价时间
+     */
+    private Date commentTime;
+    /**
+     * 修改时间
+     */
+    private Date modifyTime;
+    /**
+     * 订单备注
+     */
+    private String remark;
 
 }

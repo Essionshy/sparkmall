@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.ware.feign;
 
-import com.tingyu.sparkmall.commons.dto.OrderDTO;
+import com.tingyu.sparkmall.commons.dto.order.OrderDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;

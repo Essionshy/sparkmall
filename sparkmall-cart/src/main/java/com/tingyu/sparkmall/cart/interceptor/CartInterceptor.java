@@ -107,7 +107,7 @@ public class CartInterceptor implements HandlerInterceptor {
 
         String tempUserKey = userInfoDTO.getUserKey();
         Cookie cookie = new Cookie(CartServerConstant.TEMP_USER_KEY_NAME, tempUserKey);
-        cookie.setDomain("tingyu.com");
+        cookie.setDomain("sparkmall.com");
         cookie.setMaxAge(CartServerConstant.TEMP_USER_KEY_EXPIRE);
         response.addCookie(cookie);
     }

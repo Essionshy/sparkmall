@@ -1,18 +1,19 @@
 package com.tingyu.sparkmall.member.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 鐢ㄦ埛鐧婚檰璁板綍琛
+ * 用户登陆记录表
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @Data
 @TableName("ums_member_login_log")
@@ -22,26 +23,26 @@ public class MemberLoginLogEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 鐢ㄦ埛id
+	 * 用户id
 	 */
 	private Long memberId;
 	/**
-	 * 鐧婚檰鏃堕棿
+	 * 登陆时间
 	 */
 	private Date createTime;
 	/**
-	 * 鐧诲綍ip
+	 * 登录ip
 	 */
 	private String ip;
 	/**
-	 * 鐧诲綍鍩庡競
+	 * 登录城市
 	 */
 	private String city;
 	/**
-	 * 鐧诲綍绫诲瀷銆?-web锛?-绉诲姩銆
+	 * 登录类型【0-web，1-移动】
 	 */
 	private Integer type;
 

@@ -1,18 +1,18 @@
 package com.tingyu.sparkmall.member.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * 鏀惰揣鍦板潃琛
+ * 收货地址表
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @Data
 @TableName("ums_member_address")
@@ -22,42 +22,42 @@ public class MemberAddressEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * member_id
 	 */
 	private Long memberId;
 	/**
-	 * 鏀惰揣浜
+	 * 收货人
 	 */
 	private String name;
 	/**
-	 * 鐢佃瘽
+	 * 电话
 	 */
 	private String phone;
 	/**
-	 * 鍙宠竟
+	 * 右边
 	 */
 	private String postCode;
 	/**
-	 * 鐪佷唤
+	 * 省份
 	 */
 	private String province;
 	/**
-	 * 鍩庡競
+	 * 城市
 	 */
 	private String city;
 	/**
-	 * 鍖
+	 * 区
 	 */
 	private String region;
 	/**
-	 * 璇︾粏鍦板潃
+	 * 详细地址
 	 */
 	private String address;
 	/**
-	 * 鏄?惁榛樿?鍦板潃
+	 * 是否默认地址
 	 */
 	private Integer defaultStatus;
 

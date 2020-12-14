@@ -14,14 +14,14 @@ import java.util.Map;
 
 
 /**
- *
+ * 收货地址表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @RestController
-@RequestMapping("member/address")
+@RequestMapping("member/memberaddress")
 public class MemberAddressController {
     @Autowired
     private MemberAddressService memberAddressService;
@@ -30,7 +30,7 @@ public class MemberAddressController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("member:address:list")
+    @RequiresPermissions("member:memberaddress:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberAddressService.queryPage(params);
 
@@ -42,7 +42,7 @@ public class MemberAddressController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("member:address:info")
+    @RequiresPermissions("member:memberaddress:info")
     public R info(@PathVariable("id") Long id){
 		MemberAddressEntity memberAddress = memberAddressService.getById(id);
 
@@ -53,7 +53,7 @@ public class MemberAddressController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("member:address:save")
+    @RequiresPermissions("member:memberaddress:save")
     public R save(@RequestBody MemberAddressEntity memberAddress){
 		memberAddressService.save(memberAddress);
 
@@ -64,7 +64,7 @@ public class MemberAddressController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("member:address:update")
+    @RequiresPermissions("member:memberaddress:update")
     public R update(@RequestBody MemberAddressEntity memberAddress){
 		memberAddressService.updateById(memberAddress);
 
@@ -75,7 +75,7 @@ public class MemberAddressController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("member:address:delete")
+    @RequiresPermissions("member:memberaddress:delete")
     public R delete(@RequestBody Long[] ids){
 		memberAddressService.removeByIds(Arrays.asList(ids));
 

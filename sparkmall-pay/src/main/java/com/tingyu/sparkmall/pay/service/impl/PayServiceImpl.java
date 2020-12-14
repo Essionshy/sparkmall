@@ -1,6 +1,6 @@
 package com.tingyu.sparkmall.pay.service.impl;
 
-import com.tingyu.sparkmall.commons.dto.OrderDTO;
+import com.tingyu.sparkmall.commons.dto.order.OrderDTO;
 import com.tingyu.sparkmall.commons.support.MailMessage;
 import com.tingyu.sparkmall.commons.support.enums.MailMessageType;
 import com.tingyu.sparkmall.commons.support.enums.OrderStatus;

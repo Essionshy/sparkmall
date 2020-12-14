@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.member.entity.MemberLevelEntity;
 import java.util.Map;
 
 /**
- * 会员等级服务类
+ * 会员等级表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 public interface MemberLevelService extends IService<MemberLevelEntity> {
 

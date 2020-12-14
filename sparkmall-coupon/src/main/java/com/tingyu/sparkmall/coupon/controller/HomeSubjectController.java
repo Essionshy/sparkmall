@@ -19,11 +19,11 @@ import com.tingyu.sparkmall.commons.utils.R;
 
 
 /**
- * 棣栭〉涓撻?琛ㄣ?jd棣栭〉涓嬮潰寰堝?涓撻?锛屾瘡涓?笓棰橀摼鎺ユ柊鐨勯〉闈?紝灞曠ず涓撻?鍟嗗搧淇℃伅銆
+ * 首页专题表【jd首页下面很多专题，每个专题链接新的页面，展示专题商品信息】
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @RestController
 @RequestMapping("coupon/homesubject")

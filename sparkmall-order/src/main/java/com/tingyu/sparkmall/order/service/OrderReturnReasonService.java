@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.order.entity.OrderReturnReasonEntity;
 import java.util.Map;
 
 /**
- * 閫?揣鍘熷洜
+ * 退货原因
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 public interface OrderReturnReasonService extends IService<OrderReturnReasonEntity> {
 

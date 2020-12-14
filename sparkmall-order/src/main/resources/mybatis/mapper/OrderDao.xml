@@ -48,6 +48,9 @@
         <result property="modifyTime" column="modify_time"/>
         <result property="remark" column="remark"/>
     </resultMap>
+    <select id="getOrderStatus">
+        select status from oms_order where order_no=#{orderNo}
+    </select>
 
 
 </mapper>

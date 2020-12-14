@@ -1,18 +1,19 @@
 package com.tingyu.sparkmall.order.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 閫?揣鍘熷洜
+ * 退货原因
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 @Data
 @TableName("oms_order_return_reason")
@@ -22,18 +23,18 @@ public class OrderReturnReasonEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 閫?揣鍘熷洜鍚
+	 * 退货原因名
 	 */
 	private String name;
 	/**
-	 * 鎺掑簭
+	 * 排序
 	 */
 	private Integer sort;
 	/**
-	 * 鍚?敤鐘舵?
+	 * 启用状态
 	 */
 	private Integer status;
 	/**

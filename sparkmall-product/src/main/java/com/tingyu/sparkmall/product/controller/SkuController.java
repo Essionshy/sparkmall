@@ -16,14 +16,14 @@ import java.util.Map;
 
 
 /**
- * sku
+ * sku信息
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @RestController
-@RequestMapping("/product/sku")
+@RequestMapping("product/sku")
 public class SkuController {
     @Autowired
     private SkuService skuService;
@@ -83,7 +83,6 @@ public class SkuController {
 
         return R.ok();
     }
-
     /**
      * 远程调用
      */

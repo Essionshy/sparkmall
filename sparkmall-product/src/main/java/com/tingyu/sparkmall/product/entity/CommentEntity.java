@@ -1,18 +1,19 @@
 package com.tingyu.sparkmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 鍟嗗搧璇勪环
+ * 商品评价
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @Data
 @TableName("pms_comment")
@@ -22,7 +23,7 @@ public class CommentEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * sku_id
@@ -33,55 +34,55 @@ public class CommentEntity implements Serializable {
 	 */
 	private Long spuId;
 	/**
-	 * 鍟嗗搧鍚嶅瓧
+	 * 商品名字
 	 */
 	private String spuName;
 	/**
-	 * 浼氬憳鏄电О
+	 * 会员昵称
 	 */
 	private String nickName;
 	/**
-	 * 鏄熺骇
+	 * 星级
 	 */
 	private Integer star;
 	/**
-	 * 浼氬憳ip
+	 * 会员ip
 	 */
 	private String ip;
 	/**
-	 * 鍒涘缓鏃堕棿
+	 * 创建时间
 	 */
 	private Date createTime;
 	/**
-	 * 鏄剧ず鐘舵?[0-涓嶆樉绀猴紝1-鏄剧ず]
+	 * 显示状态[0-不显示，1-显示]
 	 */
 	private Integer status;
 	/**
-	 * 璐?拱鏃跺睘鎬х粍鍚
+	 * 购买时属性组合
 	 */
 	private String spuAttributes;
 	/**
-	 * 鐐硅禐鏁
+	 * 点赞数
 	 */
 	private Integer followCount;
 	/**
-	 * 鍥炲?鏁
+	 * 回复数
 	 */
 	private Integer replyCount;
 	/**
-	 * 璇勮?鍥剧墖/瑙嗛?[json鏁版嵁锛沎{type:鏂囦欢绫诲瀷,url:璧勬簮璺?緞}]]
+	 * 评论图片/视频[json数据；[{type:文件类型,url:资源路径}]]
 	 */
 	private String resources;
 	/**
-	 * 鍐呭?
+	 * 内容
 	 */
 	private String content;
 	/**
-	 * 鐢ㄦ埛澶村儚
+	 * 用户头像
 	 */
 	private String icon;
 	/**
-	 * 璇勮?绫诲瀷[0 - 瀵瑰晢鍝佺殑鐩存帴璇勮?锛? - 瀵硅瘎璁虹殑鍥炲?]
+	 * 评论类型[0 - 对商品的直接评论，1 - 对评论的回复]
 	 */
 	private Integer type;
 

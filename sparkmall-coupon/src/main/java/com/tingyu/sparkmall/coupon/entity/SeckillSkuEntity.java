@@ -1,5 +1,6 @@
 package com.tingyu.sparkmall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -8,11 +9,11 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * 秒杀商品实体类
+ * 秒杀活动商品关联
  * 
- * @author essiohy
+ * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Data
 @TableName("sms_seckill_sku")
@@ -22,34 +23,34 @@ public class SeckillSkuEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 促销活动ID
+	 * 活动id
 	 */
 	private Long promotionId;
 	/**
-	 * 促销活动场次ID
+	 * 活动场次id
 	 */
 	private Long promotionSessionId;
 	/**
-	 * 商品ID
+	 * 商品id
 	 */
 	private Long skuId;
 	/**
-	 * 商品秒杀价格
+	 * 秒杀价格
 	 */
 	private BigDecimal seckillPrice;
 	/**
-	 * 商品秒杀数量
+	 * 秒杀总量
 	 */
 	private BigDecimal seckillCount;
 	/**
-	 * 每人秒杀限购数量
+	 * 每人限购数量
 	 */
 	private BigDecimal seckillLimit;
 	/**
-	 * 秒杀排序
+	 * 排序
 	 */
 	private Integer seckillSort;
 

@@ -19,11 +19,11 @@ import com.tingyu.sparkmall.commons.utils.R;
 
 
 /**
- * 鍟嗗搧浼氬憳浠锋牸
+ * 商品会员价格
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @RestController
 @RequestMapping("coupon/memberprice")

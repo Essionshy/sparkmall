@@ -24,11 +24,11 @@ import java.util.Map;
 
 
 /**
- * 会员控制器
+ * 用户表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @RestController
 @RequestMapping("member")
@@ -91,7 +91,6 @@ public class MemberController {
 
         return R.ok();
     }
-
     /**
      * 远程调用服务以及主业务逻辑
      */
@@ -99,28 +98,28 @@ public class MemberController {
     @PostMapping("register")
     public CommonResult register(@RequestBody MemberRegisterParam param){
 
-       try{
+        try{
 
-           memberService.register(param);
-           return CommonResult.success();
-       }catch (Exception e){
+            memberService.register(param);
+            return CommonResult.success();
+        }catch (Exception e){
 
-           //用户名已存在异常
-           if(e instanceof UsernameExistsException){
+            //用户名已存在异常
+            if(e instanceof UsernameExistsException){
 
-               return CommonResult.error(BizCodeEnum.REGISTER_USERNAME_EXISTS.getCode(),
-                       BizCodeEnum.REGISTER_USERNAME_EXISTS.getMessage());
-           }
-           //手机号已存在异常
-           if(e instanceof PhoneExistsException){
-               return CommonResult.error(BizCodeEnum.REGISTER_USERNAME_EXISTS.getCode(),
-                       BizCodeEnum.REGISTER_USERNAME_EXISTS.getMessage());
-           }
+                return CommonResult.error(BizCodeEnum.REGISTER_USERNAME_EXISTS.getCode(),
+                        BizCodeEnum.REGISTER_USERNAME_EXISTS.getMessage());
+            }
+            //手机号已存在异常
+            if(e instanceof PhoneExistsException){
+                return CommonResult.error(BizCodeEnum.REGISTER_USERNAME_EXISTS.getCode(),
+                        BizCodeEnum.REGISTER_USERNAME_EXISTS.getMessage());
+            }
             //返回未知异常
-           return CommonResult.error(BizCodeEnum.UNKNOWN_EXCEPTION.getCode(),
-                   BizCodeEnum.UNKNOWN_EXCEPTION.getMessage());
+            return CommonResult.error(BizCodeEnum.UNKNOWN_EXCEPTION.getCode(),
+                    BizCodeEnum.UNKNOWN_EXCEPTION.getMessage());
 
-       }
+        }
     }
 
     @PostMapping("login")
@@ -152,5 +151,4 @@ public class MemberController {
 
 
     }
-
 }

@@ -7,10 +7,12 @@ spring:
     name: sparkmall-coupon # 优惠券微服务
   profiles:
     active: dev # 加载开发环境配置
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
 
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:/mybatis/mapper/**/*Dao.xml
-
 

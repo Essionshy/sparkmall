@@ -17,11 +17,11 @@ import java.util.Map;
 
 
 /**
- * 秒杀场次
+ * 秒杀活动场次
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @RestController
 @RequestMapping("coupon/seckillsession")
@@ -29,7 +29,7 @@ public class SeckillSessionController {
     @Autowired
     private SeckillSessionService seckillSessionService;
 
-  /**
+    /**
      * 列表
      */
     @RequestMapping("/list")
@@ -84,7 +84,6 @@ public class SeckillSessionController {
 
         return R.ok();
     }
-
     /**
      * 远程调用
      *
@@ -95,5 +94,4 @@ public class SeckillSessionController {
 
         return CommonResult.success().setData(sessions);
     }
-
 }

@@ -1,0 +1,73 @@
+server:
+  port: 11001
+
+
+spring:
+  cloud:
+#    stream:
+#      binders:
+#        defaultRabbit:
+#          type: rabbit
+#          environment:
+#            spring:
+#              rabbitmq:
+#                host: 192.168.0.103
+#                port: 5672
+#                username: guest
+#                password: guest
+#
+#      bindings:
+#        # 配置生产者绑定
+#        output:
+#          destination: exchange-mail
+#          content-type: application/json
+#          binder: defaultRabbit
+#        # 配置消费者绑定
+#        input:
+#          destination: exchange-mail
+#          content-type: application/json
+#          binder: defaultRabbit
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.0.105:8848
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+  rabbitmq:
+    listener:
+      simple:
+        acknowledge-mode: manual
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+#          group: queue-mail
+feign:
+  sentinel:
+    enabled: true
+
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  health:
+    redis:
+      enabled: false
+
+    rabbit:
+      enabled: false
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mybatis/mapper/**/*Dao.xml
+

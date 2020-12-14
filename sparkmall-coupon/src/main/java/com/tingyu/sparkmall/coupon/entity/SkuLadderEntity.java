@@ -1,19 +1,19 @@
 package com.tingyu.sparkmall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * 鍟嗗搧闃舵?浠锋牸
+ * 商品阶梯价格
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Data
 @TableName("sms_sku_ladder")
@@ -23,22 +23,22 @@ public class SkuLadderEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * spu_id
 	 */
 	private Long skuId;
 	/**
-	 * 婊″嚑浠
+	 * 满几件
 	 */
 	private Integer fullCount;
 	/**
-	 * 鎵撳嚑鎶
+	 * 打几折
 	 */
 	private BigDecimal discount;
 	/**
-	 * 鏄?惁鍙犲姞鍏朵粬浼樻儬[0-涓嶅彲鍙犲姞锛?-鍙?彔鍔燷
+	 * 是否叠加其他优惠[0-不可叠加，1-可叠加]
 	 */
 	private Integer addOther;
 

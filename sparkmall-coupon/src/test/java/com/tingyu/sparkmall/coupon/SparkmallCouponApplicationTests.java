@@ -1,6 +1,5 @@
 package com.tingyu.sparkmall.coupon;
 
-import com.tingyu.sparkmall.commons.dto.CouponDTO;
 import com.tingyu.sparkmall.coupon.config.AppConfig;
 import com.tingyu.sparkmall.coupon.service.CouponService;
 import com.tingyu.sparkmall.coupon.utils.PropertySourceUtil;
@@ -35,12 +34,6 @@ class SparkmallCouponApplicationTests {
         System.out.println(value);
     }
 
-    @Test
-    void testAop() {
-        CouponDTO couponDTO = new CouponDTO();
 
-        couponService.save(couponDTO);
-
-    }
 
 }

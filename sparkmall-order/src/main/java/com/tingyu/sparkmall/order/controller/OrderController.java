@@ -1,5 +1,7 @@
 package com.tingyu.sparkmall.order.controller;
 
+import com.tingyu.sparkmall.commons.dto.order.OrderDTO;
+import com.tingyu.sparkmall.commons.support.CommonResult;
 import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
 import com.tingyu.sparkmall.order.entity.OrderEntity;
@@ -14,14 +16,14 @@ import java.util.Map;
 
 
 /**
- * 璁㈠崟
+ * 订单
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 @RestController
-@RequestMapping("order/order")
+@RequestMapping("order")
 public class OrderController {
     @Autowired
     private OrderService orderService;
@@ -80,6 +82,17 @@ public class OrderController {
 		orderService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
+    }
+
+    /**
+     * 远程调用接口
+     *
+     */
+
+    @PostMapping("create")
+    public CommonResult createOrder(@RequestBody OrderDTO order){
+       orderService.create(order);
+        return CommonResult.success();
     }
 
 }

@@ -1,19 +1,19 @@
 package com.tingyu.sparkmall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * 鍟嗗搧婊″噺淇℃伅
+ * 商品满减信息
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Data
 @TableName("sms_sku_full_reduction")
@@ -23,22 +23,22 @@ public class SkuFullReductionEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * spu_id
 	 */
 	private Long skuId;
 	/**
-	 * 婊″?灏
+	 * 满多少
 	 */
 	private BigDecimal fullPrice;
 	/**
-	 * 鍑忓?灏
+	 * 减多少
 	 */
 	private BigDecimal reducePrice;
 	/**
-	 * 鏄?惁鍙備笌鍏朵粬浼樻儬
+	 * 是否参与其他优惠
 	 */
 	private Integer addOther;
 

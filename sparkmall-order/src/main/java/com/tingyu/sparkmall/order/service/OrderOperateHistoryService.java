@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.order.entity.OrderOperateHistoryEntity;
 import java.util.Map;
 
 /**
- * 璁㈠崟鎿嶄綔鍘嗗彶璁板綍
+ * 订单操作历史记录
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 public interface OrderOperateHistoryService extends IService<OrderOperateHistoryEntity> {
 

@@ -12,16 +12,15 @@ import com.tingyu.sparkmall.member.param.MemberRegisterParam;
 import java.util.Map;
 
 /**
- * 鐢ㄦ埛琛
+ * 用户表
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 public interface MemberService extends IService<MemberEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
-
     /**
      * 会员注册
      * @param param
@@ -34,20 +33,19 @@ public interface MemberService extends IService<MemberEntity> {
      * @param username
      * @throws UsernameExistsException
      */
-   void validateUsernameUnique(String username) throws UsernameExistsException;
+    void validateUsernameUnique(String username) throws UsernameExistsException;
 
     /**
      * 手机号唯一性校验
      * @param phone
      * @throws PhoneExistsException
      */
-   void validatePhoneUnique(String phone) throws PhoneExistsException;
+    void validatePhoneUnique(String phone) throws PhoneExistsException;
 
     /**
      * 用户登录
      * @param param
      */
     MemberDTO login(MemberLoginParam param) throws Exception;
-
 }
 

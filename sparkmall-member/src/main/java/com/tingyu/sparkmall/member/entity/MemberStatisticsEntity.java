@@ -1,19 +1,19 @@
 package com.tingyu.sparkmall.member.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * 缁熻?淇℃伅琛
+ * 统计信息表
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:51:21
+ * @date 2020-12-13 14:22:54
  */
 @Data
 @TableName("ums_member_statistics")
@@ -23,62 +23,62 @@ public class MemberStatisticsEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
-	 * 鐢ㄦ埛id
+	 * 用户id
 	 */
 	private Long memberId;
 	/**
-	 * 绱??娑堣垂閲戦?
+	 * 累计消费金额
 	 */
 	private BigDecimal consumeAmount;
 	/**
-	 * 绱??浼樻儬閲戦?
+	 * 累计优惠金额
 	 */
 	private BigDecimal couponAmount;
 	/**
-	 * 璁㈠崟鏁伴噺
+	 * 订单数量
 	 */
 	private Integer orderCount;
 	/**
-	 * 浼樻儬鍒告暟閲
+	 * 优惠券数量
 	 */
 	private Integer couponCount;
 	/**
-	 * 璇勪环鏁
+	 * 评价数
 	 */
 	private Integer commentCount;
 	/**
-	 * 閫?揣鏁伴噺
+	 * 退货数量
 	 */
 	private Integer returnOrderCount;
 	/**
-	 * 鐧诲綍娆℃暟
+	 * 登录次数
 	 */
 	private Integer loginCount;
 	/**
-	 * 鍏虫敞鏁伴噺
+	 * 关注数量
 	 */
 	private Integer attendCount;
 	/**
-	 * 绮変笣鏁伴噺
+	 * 粉丝数量
 	 */
 	private Integer fansCount;
 	/**
-	 * 鏀惰棌鐨勫晢鍝佹暟閲
+	 * 收藏的商品数量
 	 */
 	private Integer collectProductCount;
 	/**
-	 * 鏀惰棌鐨勪笓棰樻椿鍔ㄦ暟閲
+	 * 收藏的专题活动数量
 	 */
 	private Integer collectSubjectCount;
 	/**
-	 * 鏀惰棌鐨勮瘎璁烘暟閲
+	 * 收藏的评论数量
 	 */
 	private Integer collectCommentCount;
 	/**
-	 * 閭??鐨勬湅鍙嬫暟閲
+	 * 邀请的朋友数量
 	 */
 	private Integer inviteFriendCount;
 

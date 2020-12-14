@@ -1,18 +1,18 @@
 package com.tingyu.sparkmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * sku鍥剧墖
+ * sku图片
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @Data
 @TableName("pms_sku_images")
@@ -22,22 +22,22 @@ public class SkuImagesEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * sku_id
 	 */
 	private Long skuId;
 	/**
-	 * 鍥剧墖鍦板潃
+	 * 图片地址
 	 */
 	private String url;
 	/**
-	 * 鎺掑簭
+	 * 排序
 	 */
 	private Integer sort;
 	/**
-	 * 榛樿?鍥綶0 - 涓嶆槸榛樿?鍥撅紝1 - 鏄?粯璁ゅ浘]
+	 * 默认图[0 - 不是默认图，1 - 是默认图]
 	 */
 	private Integer defaultStatus;
 

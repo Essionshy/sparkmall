@@ -1,24 +1,29 @@
 package com.tingyu.sparkmall.product.controller;
 
-import com.tingyu.sparkmall.commons.utils.PageUtils;
-import com.tingyu.sparkmall.commons.utils.R;
-import com.tingyu.sparkmall.product.entity.SkuAttrValueEntity;
-import com.tingyu.sparkmall.product.service.SkuAttrValueService;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tingyu.sparkmall.product.entity.SkuAttrValueEntity;
+import com.tingyu.sparkmall.product.service.SkuAttrValueService;
+import com.tingyu.sparkmall.commons.utils.PageUtils;
+import com.tingyu.sparkmall.commons.utils.R;
 
 
 
 /**
- * sku閿?敭灞炴?&鍊
+ * sku销售属性&值
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:40:28
+ * @date 2020-12-13 14:23:41
  */
 @RestController
 @RequestMapping("product/skuattrvalue")

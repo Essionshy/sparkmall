@@ -5,11 +5,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 绉掓潃娲诲姩鍦烘?
+ * 秒杀活动场次
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 @Mapper
 public interface SeckillSessionDao extends BaseMapper<SeckillSessionEntity> {

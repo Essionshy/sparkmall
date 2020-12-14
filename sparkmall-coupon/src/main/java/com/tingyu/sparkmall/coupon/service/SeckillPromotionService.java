@@ -7,11 +7,11 @@ import com.tingyu.sparkmall.coupon.entity.SeckillPromotionEntity;
 import java.util.Map;
 
 /**
- * 绉掓潃娲诲姩
+ * 秒杀活动
  *
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:58:02
+ * @date 2020-12-13 14:21:15
  */
 public interface SeckillPromotionService extends IService<SeckillPromotionEntity> {
 

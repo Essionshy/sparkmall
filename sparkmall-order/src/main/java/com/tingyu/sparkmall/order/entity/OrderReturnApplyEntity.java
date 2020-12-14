@@ -1,5 +1,6 @@
 package com.tingyu.sparkmall.order.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -9,11 +10,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 璁㈠崟閫?揣鐢宠?
+ * 订单退货申请
  * 
  * @author essionshy
  * @email 1218817610@qq.com
- * @date 2020-12-11 16:35:37
+ * @date 2020-12-13 14:22:07
  */
 @Data
 @TableName("oms_order_return_apply")
@@ -23,114 +24,114 @@ public class OrderReturnApplyEntity implements Serializable {
 	/**
 	 * id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long id;
 	/**
 	 * order_id
 	 */
 	private Long orderId;
 	/**
-	 * 閫?揣鍟嗗搧id
+	 * 退货商品id
 	 */
 	private Long skuId;
 	/**
-	 * 璁㈠崟缂栧彿
+	 * 订单编号
 	 */
 	private String orderNo;
 	/**
-	 * 鐢宠?鏃堕棿
+	 * 申请时间
 	 */
 	private Date createTime;
 	/**
-	 * 浼氬憳鐢ㄦ埛鍚
+	 * 会员用户名
 	 */
 	private String memberUsername;
 	/**
-	 * 閫??閲戦?
+	 * 退款金额
 	 */
 	private BigDecimal returnAmount;
 	/**
-	 * 閫?揣浜哄?鍚
+	 * 退货人姓名
 	 */
 	private String returnName;
 	/**
-	 * 閫?揣浜虹數璇
+	 * 退货人电话
 	 */
 	private String returnPhone;
 	/**
-	 * 鐢宠?鐘舵?[0->寰呭?鐞嗭紱1->閫?揣涓?紱2->宸插畬鎴愶紱3->宸叉嫆缁漖
+	 * 申请状态[0->待处理；1->退货中；2->已完成；3->已拒绝]
 	 */
 	private Integer status;
 	/**
-	 * 澶勭悊鏃堕棿
+	 * 处理时间
 	 */
 	private Date handleTime;
 	/**
-	 * 鍟嗗搧鍥剧墖
+	 * 商品图片
 	 */
 	private String skuImg;
 	/**
-	 * 鍟嗗搧鍚嶇О
+	 * 商品名称
 	 */
 	private String skuName;
 	/**
-	 * 鍟嗗搧鍝佺墝
+	 * 商品品牌
 	 */
 	private String skuBrand;
 	/**
-	 * 鍟嗗搧閿?敭灞炴?(JSON)
+	 * 商品销售属性(JSON)
 	 */
 	private String skuAttrsVals;
 	/**
-	 * 閫?揣鏁伴噺
+	 * 退货数量
 	 */
 	private Integer skuCount;
 	/**
-	 * 鍟嗗搧鍗曚环
+	 * 商品单价
 	 */
 	private BigDecimal skuPrice;
 	/**
-	 * 鍟嗗搧瀹為檯鏀?粯鍗曚环
+	 * 商品实际支付单价
 	 */
 	private BigDecimal skuRealPrice;
 	/**
-	 * 鍘熷洜
+	 * 原因
 	 */
 	private String reason;
 	/**
-	 * 鎻忚堪
+	 * 描述
 	 */
 	private String description;
 	/**
-	 * 鍑?瘉鍥剧墖锛屼互閫楀彿闅斿紑
+	 * 凭证图片，以逗号隔开
 	 */
 	private String descPics;
 	/**
-	 * 澶勭悊澶囨敞
+	 * 处理备注
 	 */
 	private String handleNote;
 	/**
-	 * 澶勭悊浜哄憳
+	 * 处理人员
 	 */
 	private String handleMan;
 	/**
-	 * 鏀惰揣浜
+	 * 收货人
 	 */
 	private String receiveMan;
 	/**
-	 * 鏀惰揣鏃堕棿
+	 * 收货时间
 	 */
 	private Date receiveTime;
 	/**
-	 * 鏀惰揣澶囨敞
+	 * 收货备注
 	 */
 	private String receiveNote;
 	/**
-	 * 鏀惰揣鐢佃瘽
+	 * 收货电话
 	 */
 	private String receivePhone;
 	/**
-	 * 鍏?徃鏀惰揣鍦板潃
+	 * 公司收货地址
 	 */
 	private String receiveAddress;
 
