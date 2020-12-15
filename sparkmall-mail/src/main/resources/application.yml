@@ -12,7 +12,7 @@ spring:
   mail:
     protocol: smtp
     host: smtp.163.com
-    username: xiaozhou89757@163.com
+    username: 
     password: EUEUKILFEKNYMOCX
     default-encoding: UTF-8
     port: 25
