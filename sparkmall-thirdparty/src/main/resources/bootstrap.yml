@@ -9,4 +9,6 @@ spring:
         server-addr: 192.168.0.105:8848
         namespace: 70b84aa6-8353-477d-b2ad-c9c6a1d248cc
         file-extension: yaml
+  application:
+    name: sparkmall-third-party
 

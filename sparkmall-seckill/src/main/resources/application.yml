@@ -7,9 +7,9 @@ spring:
 
   rabbitmq:
     virtual-host: /
-    host: 192.168.0.103
+    host: 192.168.0.106
   redis:
-    host: 192.168.0.103
+    host: 192.168.0.106
 
   thymeleaf:
     cache: false

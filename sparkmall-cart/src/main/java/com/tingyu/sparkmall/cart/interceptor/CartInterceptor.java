@@ -38,29 +38,22 @@ public class CartInterceptor implements HandlerInterceptor {
 
         //获取登录会员信息
         MemberDTO member = (MemberDTO) request.getSession().getAttribute(AuthServerConstant.LOGINED_USER_INFO);
-
         UserInfoDTO user = new UserInfoDTO();
-
         if (member == null) {
             //如果用户未登录，则由系统生成一个临时userKey,请求结束后将其返回给客户端，并保存在 cookie中，下次请求携带上该数据
-
             String tempUserKey = tryGetUserKeyFromCookie(request);
             if (tempUserKey == null) {
                 tempUserKey = UUID.randomUUID().toString();
-
             }else{
                 user.setHasTempUserKey(true);
             }
             user.setUserKey(tempUserKey);
-
         } else {
             //已登录
             user.setUserId(member.getUserId().toString());
         }
-
         //将用户信息保存到线程本地共享
         threadLocal.set(user);
-
         //不管用户是否登录始终放行请求
         return true;
     }
@@ -71,19 +64,15 @@ public class CartInterceptor implements HandlerInterceptor {
      * @param request
      */
     private String tryGetUserKeyFromCookie(HttpServletRequest request) {
-
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length > 0) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equalsIgnoreCase(CartServerConstant.TEMP_USER_KEY_NAME)) {
                     return cookie.getValue();
                 }
-
             }
         }
-
         return null;
-
     }
 
 
@@ -104,7 +93,6 @@ public class CartInterceptor implements HandlerInterceptor {
         if (userInfoDTO.getHasTempUserKey()) {
             return;
         }
-
         String tempUserKey = userInfoDTO.getUserKey();
         Cookie cookie = new Cookie(CartServerConstant.TEMP_USER_KEY_NAME, tempUserKey);
         cookie.setDomain("sparkmall.com");

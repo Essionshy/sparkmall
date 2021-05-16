@@ -1,5 +1,7 @@
 package com.tingyu.sparkmall.cart.vo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
  * @Create 2020/12/7 18:56
  * @Version renren-fast
  */
-
+@Data
 public class CartItemVo implements Serializable {
 
     private Long skuId; //商品skuId

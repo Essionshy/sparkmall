@@ -22,3 +22,6 @@ public class SparkmallAuthApplication {
         SpringApplication.run(SparkmallAuthApplication.class,args);
     }
 }
+
+
+

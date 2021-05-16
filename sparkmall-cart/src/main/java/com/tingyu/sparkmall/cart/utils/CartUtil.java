@@ -13,8 +13,6 @@ public final class CartUtil {
 
 
     public static Integer getValueForInt(Map<String, Object> entries, String target) {
-
-
         Iterator<Map.Entry<String, Object>> iterator = entries.entrySet().iterator();
         Integer count = 0;
         while (iterator.hasNext()) {
@@ -23,15 +21,11 @@ public final class CartUtil {
             if (key.contains(target)) {
                 count = Math.addExact(count, (Integer) next.getValue());
             }
-
         }
-
         return count;
     }
 
     public static BigDecimal getValueForBigDecimal(Map<String, Object> entries, String target) {
-
-
         Iterator<Map.Entry<String, Object>> iterator = entries.entrySet().iterator();
         BigDecimal count = new BigDecimal(0);
         while (iterator.hasNext()) {
@@ -40,9 +34,7 @@ public final class CartUtil {
             if (key.contains(target)) {
                 count = count.add(new BigDecimal((Double) next.getValue()));
             }
-
         }
-
         return count;
     }
 

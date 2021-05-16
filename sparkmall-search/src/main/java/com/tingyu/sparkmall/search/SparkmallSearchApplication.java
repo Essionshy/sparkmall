@@ -8,6 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
+ * 检索服务
  * @Author essionshy
  * @Create 2020/12/6 16:50
  * @Version renren-fast

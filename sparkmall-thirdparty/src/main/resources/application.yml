@@ -1,9 +1,3 @@
-server:
-  port: 18001
-
-
 spring:
   profiles:
     active: dev
-  application:
-    name: sparkmall-third-party

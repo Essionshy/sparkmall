@@ -13,7 +13,7 @@ spring:
   session:
     store-type: redis
   redis:
-    host: 192.168.0.103
+    host: 192.168.0.106
     port: 6379
 mybatis-plus:
   mapper-locations: classpath*:/mybatis/mapper/**/*Dao.xml

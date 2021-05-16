@@ -24,7 +24,6 @@ public class CartController {
 
     @GetMapping("/add")
     public String addToCart(@RequestParam("skuId") String skuId, @RequestParam("count") Integer count){
-
         cartService.addToCart(skuId,count);
         return "redirect:http://cart.sparkmall.com/cart/successCart.html";
     }
@@ -33,7 +32,6 @@ public class CartController {
 
     @GetMapping("/successCart.html")
     public String getCartSuccessPage(){
-
         return "success";
     }
 

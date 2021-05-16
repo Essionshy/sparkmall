@@ -37,8 +37,6 @@ public class CartServiceImpl implements CartService {
     @Resource
     private ThreadPoolExecutor mainThreadPoolExecutor;
 
-    /* feign com.tingyu.sparkmall.msg.service*/
-
     @Resource
     private ProductFeignService productFeignService;
 
@@ -51,18 +49,7 @@ public class CartServiceImpl implements CartService {
     @Override
     public void addToCart(String skuId, Integer count) {
         //查询商品项基本信息，并封装
-
-
-
-
-
-
-
         BoundHashOperations<String, Object, Object> hashOps = getHashOps();
-
-
-
-
     }
 
     /**
@@ -71,20 +58,16 @@ public class CartServiceImpl implements CartService {
      */
     private BoundHashOperations<String, Object, Object> getHashOps() {
         UserInfoDTO userInfoDTO = CartInterceptor.threadLocal.get();
-
         String userKey = "";
-
         if (userInfoDTO.getUserId() != null) {
             //登录用户
             userKey = CartServerConstant.CART_KEY_PREFIX + userInfoDTO.getUserId();
         } else {
             //游客
             userKey = CartServerConstant.CART_KEY_PREFIX + userInfoDTO.getUserKey();
-
         }
         //远程查询商品信息,并封装 CartVo对象
         BoundHashOperations<String, Object, Object> hashOps =  redisTemplate.boundHashOps(userKey);
         return hashOps;
-
     }
 }

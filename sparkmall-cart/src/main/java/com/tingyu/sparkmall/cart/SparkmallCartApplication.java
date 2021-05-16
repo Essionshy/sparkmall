@@ -8,7 +8,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * @Author essionshy
  * @Create 2020/12/2 0:00
- * @Version renren-fast
  */
 @SpringBootApplication
 @EnableDiscoveryClient
