@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/sparkmall-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-cart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-coupon/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-lottery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-mail/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-member/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-message/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-pay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-product/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-search/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-seckill/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-thirdparty/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sparkmall-ware/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -21,8 +21,6 @@ import java.util.Map;
 @Configuration
 public class RabbitMQConfig {
 
-
-
     /**
      * 配置 JSON 类型消息
      *
@@ -42,7 +40,6 @@ public class RabbitMQConfig {
      */
     @Bean
     public Exchange storeEventExchange() {
-
         return new TopicExchange("store-event-exchange", true, false);
     }
 
@@ -57,7 +54,6 @@ public class RabbitMQConfig {
      */
     @Bean
     public Queue storeDelayQueue() {
-
         Map<String, Object> arguments = new HashMap<>();
         arguments.put("x-dead-letter-exchange", "store-event-exchange");
         arguments.put("x-dead-letter-routing-key", "store-release");
@@ -71,7 +67,6 @@ public class RabbitMQConfig {
      */
     @Bean
     public Queue storeReleaseQueue() {
-
         return new Queue("store-release-queue", true, false, false);
     }
 
@@ -82,8 +77,6 @@ public class RabbitMQConfig {
      */
     @Bean
     public Binding storeDelayQueueBinding(){
-
-
         return new Binding("store-delay-queue", Binding.DestinationType.QUEUE,"store-event-exchange","store-locked",null);
     }
 
@@ -93,8 +86,6 @@ public class RabbitMQConfig {
      */
     @Bean
     public Binding storeReleaseQueueBinding(){
-
-
         return new Binding("store-release-queue", Binding.DestinationType.QUEUE,"store-event-exchange","store-release",null);
     }
 

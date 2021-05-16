@@ -1,6 +1,5 @@
 package com.tingyu.sparkmall.ware.config;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan(value = "com.tingyu.sparkmall")
-@MapperScan("com.tingyu.sparkmall.ware.mapper")
+//@MapperScan("com.tingyu.sparkmall.ware.mapper")
 public class ApplicationConfiguration {
 
 

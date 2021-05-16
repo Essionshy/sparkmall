@@ -33,11 +33,8 @@
         <module>sparkmall-message</module>
         <module>sparkmall-auth</module>
         <module>sparkmall-seckill</module>
-
     </modules>
-
-
-
+    
     <build>
         <plugins>
             <plugin>

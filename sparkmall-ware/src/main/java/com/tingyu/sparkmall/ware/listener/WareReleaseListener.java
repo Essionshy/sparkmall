@@ -22,7 +22,7 @@ import java.util.Map;
 public class WareReleaseListener {
 
     @RabbitHandler
-    public void handlStockLockedRelease(Map<String, Object> data, Channel channel, Message message) throws IOException {
+    public void handleStockLockRelease(Map<String, Object> data, Channel channel, Message message) throws IOException {
 
         long tag = message.getMessageProperties().getDeliveryTag();
 

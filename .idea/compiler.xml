@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="sparkmall-admin" />
+        <module name="sparkmall-message" />
+        <module name="sparkmall-gateway" />
+        <module name="sparkmall-product" />
+        <module name="sparkmall-seckill" />
+        <module name="sparkmall-order" />
+        <module name="sparkmall-cart" />
+        <module name="sparkmall-thirdparty" />
+        <module name="sparkmall-job" />
+        <module name="sparkmall-mail" />
+        <module name="sparkmall-lottery" />
+        <module name="sparkmall-commons" />
+        <module name="sparkmall-member" />
+        <module name="sparkmall-pay" />
+        <module name="sparkmall-ware" />
+        <module name="sparkmall-coupon" />
+        <module name="sparkmall-auth" />
+        <module name="sparkmall-search" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sparkmall" target="1.8" />
+      <module name="sparkmall-admin" target="1.8" />
+      <module name="sparkmall-auth" target="1.8" />
+      <module name="sparkmall-cart" target="1.8" />
+      <module name="sparkmall-commons" target="1.8" />
+      <module name="sparkmall-coupon" target="1.8" />
+      <module name="sparkmall-gateway" target="1.8" />
+      <module name="sparkmall-job" target="1.8" />
+      <module name="sparkmall-lottery" target="1.8" />
+      <module name="sparkmall-mail" target="1.8" />
+      <module name="sparkmall-member" target="1.8" />
+      <module name="sparkmall-message" target="1.8" />
+      <module name="sparkmall-msg" target="1.8" />
+      <module name="sparkmall-order" target="1.8" />
+      <module name="sparkmall-pay" target="1.8" />
+      <module name="sparkmall-product" target="1.8" />
+      <module name="sparkmall-search" target="1.8" />
+      <module name="sparkmall-seckill" target="1.8" />
+      <module name="sparkmall-thirdparty" target="1.8" />
+      <module name="sparkmall-ware" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="sparkmall-admin" options="-parameters" />
+      <module name="sparkmall-auth" options="-parameters" />
+      <module name="sparkmall-cart" options="-parameters" />
+      <module name="sparkmall-commons" options="-parameters" />
+      <module name="sparkmall-coupon" options="-parameters" />
+      <module name="sparkmall-gateway" options="-parameters" />
+      <module name="sparkmall-job" options="-parameters" />
+      <module name="sparkmall-lottery" options="-parameters" />
+      <module name="sparkmall-mail" options="-parameters" />
+      <module name="sparkmall-member" options="-parameters" />
+      <module name="sparkmall-message" options="-parameters" />
+      <module name="sparkmall-msg" options="-parameters" />
+      <module name="sparkmall-order" options="-parameters" />
+      <module name="sparkmall-pay" options="-parameters" />
+      <module name="sparkmall-product" options="-parameters" />
+      <module name="sparkmall-search" options="-parameters" />
+      <module name="sparkmall-seckill" options="-parameters" />
+      <module name="sparkmall-thirdparty" options="-parameters" />
+      <module name="sparkmall-ware" options="-parameters" />
+    </option>
+  </component>
+</project>

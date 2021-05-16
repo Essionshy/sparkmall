@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/sparkmall-product/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-ware/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-coupon/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-order/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-thirdparty/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-lottery/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-mail/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-member/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sparkmall-seckill/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/sparkmall-api/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

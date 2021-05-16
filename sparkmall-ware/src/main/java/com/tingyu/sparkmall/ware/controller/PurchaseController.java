@@ -1,20 +1,16 @@
 package com.tingyu.sparkmall.ware.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.tingyu.sparkmall.ware.entity.PurchaseEntity;
-import com.tingyu.sparkmall.ware.service.PurchaseService;
 import com.tingyu.sparkmall.commons.utils.PageUtils;
 import com.tingyu.sparkmall.commons.utils.R;
+import com.tingyu.sparkmall.ware.entity.PurchaseEntity;
+import com.tingyu.sparkmall.ware.service.PurchaseService;
+import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
@@ -34,7 +30,8 @@ public class PurchaseController {
     /**
      * 列表
      */
-    @RequestMapping("/list")
+    @ApiOperation("分页查询库存采购")
+    @PostMapping("/list")
     @RequiresPermissions("ware:purchase:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = purchaseService.queryPage(params);

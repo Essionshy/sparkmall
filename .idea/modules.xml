@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sparkmall.iml" filepath="$PROJECT_DIR$/sparkmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-admin/sparkmall-admin.iml" filepath="$PROJECT_DIR$/sparkmall-admin/sparkmall-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-auth/sparkmall-auth.iml" filepath="$PROJECT_DIR$/sparkmall-auth/sparkmall-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-cart/sparkmall-cart.iml" filepath="$PROJECT_DIR$/sparkmall-cart/sparkmall-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-commons/sparkmall-commons.iml" filepath="$PROJECT_DIR$/sparkmall-commons/sparkmall-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-coupon/sparkmall-coupon.iml" filepath="$PROJECT_DIR$/sparkmall-coupon/sparkmall-coupon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-gateway/sparkmall-gateway.iml" filepath="$PROJECT_DIR$/sparkmall-gateway/sparkmall-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-job/sparkmall-job.iml" filepath="$PROJECT_DIR$/sparkmall-job/sparkmall-job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-lottery/sparkmall-lottery.iml" filepath="$PROJECT_DIR$/sparkmall-lottery/sparkmall-lottery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-mail/sparkmall-mail.iml" filepath="$PROJECT_DIR$/sparkmall-mail/sparkmall-mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-member/sparkmall-member.iml" filepath="$PROJECT_DIR$/sparkmall-member/sparkmall-member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-message/sparkmall-message.iml" filepath="$PROJECT_DIR$/sparkmall-message/sparkmall-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-order/sparkmall-order.iml" filepath="$PROJECT_DIR$/sparkmall-order/sparkmall-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-pay/sparkmall-pay.iml" filepath="$PROJECT_DIR$/sparkmall-pay/sparkmall-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-product/sparkmall-product.iml" filepath="$PROJECT_DIR$/sparkmall-product/sparkmall-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-search/sparkmall-search.iml" filepath="$PROJECT_DIR$/sparkmall-search/sparkmall-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-seckill/sparkmall-seckill.iml" filepath="$PROJECT_DIR$/sparkmall-seckill/sparkmall-seckill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-thirdparty/sparkmall-thirdparty.iml" filepath="$PROJECT_DIR$/sparkmall-thirdparty/sparkmall-thirdparty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-ware/sparkmall-ware.iml" filepath="$PROJECT_DIR$/sparkmall-ware/sparkmall-ware.iml" />
+    </modules>
+  </component>
+</project>
